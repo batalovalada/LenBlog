@@ -80,7 +80,7 @@ p {
 
     font-family: 'Ubuntu', sans-serif;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.1;
     color: #fff;
 
@@ -121,7 +121,7 @@ p {
 
 
 .intro__banner {
-    background: #3c65a7 url(../images/intro/intro.jpg) center no-repeat;
+    background: #8e9a9a url(../images/intro/intro.jpg) center no-repeat;
     -webkit-background-size: cover;
     background-size: cover;
 
@@ -161,7 +161,7 @@ p {
     margin-left: auto;
     margin-right: 210px;
 
-
+    color: #fff;
     text-shadow: 1px 1px 2px #000;
 }
 
@@ -177,12 +177,6 @@ p {
 .intro__title {
     margin-bottom: 15px;
 
-    font-family: 'Roboto Slab', serif;
-    font-size: 32px;
-    font-weight: 600;
-    line-height: 1.2;
-    color: #fff;
-
     transition: transform .2s ease;
 }
 
@@ -190,20 +184,34 @@ p {
     transform: translate3d(10px, 0, 0);
 }
 
-.intro__subtitle {
-    margin-bottom: 40px;
-
+.intro__title a {
     font-family: 'Roboto Slab', serif;
-    font-size: 24px;
+    font-size: 32px;
     font-weight: 600;
     line-height: 1.2;
-    color: #fff;
+    color: inherit;
+
+    text-shadow: 1px 1px 2px #000;
+}
+
+.intro__subtitle {
+    margin-bottom: 40px;
 
     transition: transform .2s ease;
 }
 
 .intro__subtitle:hover {
     transform: translate3d(10px, 0, 0);
+}
+
+.intro__subtitle a {
+    font-family: 'Roboto Slab', serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+
+    color: inherit;
+    text-shadow: 1px 1px 2px #000;
 }
 
 .intro__content {
@@ -231,7 +239,11 @@ p {
     max-width: 200px;
     display: flex;
     align-items: center;
-    transition: all .2s ease;
+    transition: transform .2s ease;
+}
+
+.continue__link--intro {
+    text-shadow: 1px 1px 2px #000;
 }
 
 .continue__link--popular {
@@ -266,90 +278,104 @@ p {
     fill: rgba(204, 109, 14, 0.9);
 }
 
-/* Popular */
-.popular {
-    background-color: rgba(0, 0, 0, .8);
-    padding: 30px 0 90px;
 
-    position: relative;
-    overflow: hidden;
+/* Article */
+.article__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
 }
 
-.popular:before {
-    content: "";
+.article__item {
+    box-shadow: 0 10px 25px #000;
+    overflow: hidden;
+
+}
+
+.article__img {
     display: block;
-    position: absolute;
-    top: 30px;
-    left: 0;
-    right: 0;
-    z-index: 2;
+    max-width: 100%;
+    height: auto;
 
-    width: 70%;
-    height: 100px;
-
-    background-color: rgba(204, 109, 14, 0.8);
+    transition: all .3s ease;
 }
 
-.popular__suptitle {
-    position: relative;
-    z-index: 3;
-    height: 100px;
-
-    display: flex;
-    align-items: center;
-
-    margin-bottom: 130px;
-
-    font-size: 36px;
-    font-weight: 600;
-    line-height: 1.2;
+.article__photo:hover .article__img {
+    max-width: 115%;
 }
 
-.popular__item {
-    display: flex;
-    justify-content: space-between;
+.article__content {
+    padding-bottom: 30px;
 }
 
-.popular__content {
-    width: 50%;
-    position: relative;
-    z-index: 10;
-
-    padding: 40px;
-    background-color: rgba(0, 0, 0, .7);
-
-    color: #fff;
-}
-
-.popular__title {
-    font-size: 28px;
-    font-weight: 600;
-    line-height: 1.2;
-
+.article__title {
+    padding: 15px;
+    margin-left: 20px;
+    background-color: rgba(204, 109, 14, 0.9);
     margin-bottom: 15px;
+    transition: transform .2s ease;
+
+    cursor: pointer;
 }
 
-/*.popular__photo {
-    position: relative;
-    height: 500px;
-    width: 50%;
-
-    overflow: hidden;
-
-}*/
-
-.popular__img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-
-    width: 100%;
-
+.article__title:hover {
+    transform: translate3d(10px, 0, 0);
 }
 
-/* Articles */
+
+.article__title a {
+    font-family: 'Roboto Slab', serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+
+    color: inherit;
+}
+
+.article__text {
+    padding: 0 20px;
+    text-align: justify;
+    font-weight: 300;
+}
+
+.article__footer {
+    list-style-type: none;
+}
+
+.article__data {
+    margin-left: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
