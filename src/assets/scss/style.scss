@@ -310,9 +310,9 @@ p {
 }
 
 .article__title {
-    padding: 15px;
     margin-left: 20px;
-    background-color: rgba(204, 109, 14, 0.9);
+    padding: 15px;
+    background-color: rgba(204, 109, 14, .8);
     margin-bottom: 15px;
     transition: transform .2s ease;
 
@@ -335,16 +335,43 @@ p {
 
 .article__text {
     padding: 0 20px;
-    text-align: justify;
-    font-weight: 300;
 }
 
 .article__footer {
+    margin: 40px 20px 30px 0;
+    padding: 15px 0 15px 20px;
+
+
+    background-color: rgba(4, 60, 26, 0.7);
+
+    font-family: 'Roboto Slab', serif;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 1);
+    font-size: 20px;
+}
+
+.article__footer li {
     list-style-type: none;
 }
 
+.article__link {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 500;
+    line-height: 1.5;
+    font-size: 20px;
+    color: inherit;
+
+    transition: color .2s ease;
+}
+
+.article__link:hover {
+    color: rgba(255, 127, 0, 1);
+}
+
+
 .article__data {
     margin-left: 20px;
+    font-size: 18px;
 }
 
 
