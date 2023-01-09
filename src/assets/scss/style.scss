@@ -206,32 +206,6 @@ p {
     transform: translate3d(10px, 0, 0);
 }
 
-.intro__link {
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.9);
-
-    display: flex;
-    align-items: center;
-    transition: all .2s ease;
-}
-
-.intro__link:hover {
-    text-decoration: underline;
-    transform: translate3d(10px, 0, 0);
-}
-
-.intro__link span {
-    margin-right: 15px;
-}
-
-.intro__icon {
-    fill: rgba(255, 255, 255, 0.9);
-    filter: drop-shadow(1px 1px 2px #000);
-}
-
 .intro__content {
     position: relative;
     z-index: 10;
@@ -244,15 +218,138 @@ p {
     font-weight: 300;
 }
 
+/* Continue */
 
+.continue__link {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
 
+    width: 100%;
+    max-width: 200px;
+    display: flex;
+    align-items: center;
+    transition: all .2s ease;
+}
 
+.continue__link--popular {
+    font-size: 16px;
+}
 
+.continue__link:hover {
+    transform: translate3d(10px, 0, 0);
+}
 
+.continue__link--popular:hover {
+    color: rgba(204, 109, 14, 0.9);
+}
 
+.continue__link span {
+    margin-right: 15px;
+}
 
+.continue__icon {
+    fill: rgba(255, 255, 255, 0.9);
+    filter: drop-shadow(1px 1px 2px #000);
+}
 
+.continue__icon--popular {
+    width: 20px;
+    height: 20px;
 
+    transition: all .2s ease;
+}
+
+.continue__link--popular:hover .continue__icon--popular {
+    fill: rgba(204, 109, 14, 0.9);
+}
+
+/* Popular */
+.popular {
+    background-color: rgba(0, 0, 0, .8);
+    padding: 30px 0 90px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.popular:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
+    width: 70%;
+    height: 100px;
+
+    background-color: rgba(204, 109, 14, 0.8);
+}
+
+.popular__suptitle {
+    position: relative;
+    z-index: 3;
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 130px;
+
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.popular__item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popular__content {
+    width: 50%;
+    position: relative;
+    z-index: 10;
+
+    padding: 40px;
+    background-color: rgba(0, 0, 0, .7);
+
+    color: #fff;
+}
+
+.popular__title {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.2;
+
+    margin-bottom: 15px;
+}
+
+/*.popular__photo {
+    position: relative;
+    height: 500px;
+    width: 50%;
+
+    overflow: hidden;
+
+}*/
+
+.popular__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+    width: 100%;
+
+}
+
+/* Articles */
 
 
 
