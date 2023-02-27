@@ -1,0 +1,41 @@
+/* Continue */
+
+.continue__link {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+
+    width: 100%;
+    max-width: 200px;
+    display: flex;
+    align-items: center;
+    transition: all .2s ease;
+}
+
+.continue__link--intro {
+    text-shadow: 1px 1px 2px #000;
+}
+
+.continue__link:hover {
+    transform: translate3d(10px, 0, 0);
+    color: rgba(255, 127, 0, 1);
+}
+
+.continue__link span {
+    margin-right: 15px;
+}
+
+.continue__icon {
+    fill: rgba(255, 255, 255, 0.9);
+}
+
+.continue__link--intro .continue__icon {
+    filter: drop-shadow(1px 1px 2px #000);
+}
+
+
+.continue__link:hover .continue__icon {
+    fill: rgba(255, 127, 0, 1);
+}

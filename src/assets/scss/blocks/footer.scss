@@ -1,0 +1,119 @@
+/* Footer */
+
+.footer {
+    background-color: rgba(4, 60, 26, .9);
+    padding: 40px 0;
+}
+
+.footer__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.footer__logo {
+    display: flex;
+    align-items: baseline;
+}
+
+.footer__title {
+    color: #fff;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1.1;
+    margin-left: 10px;
+}
+
+.footer__backpack {
+    width: 35px;
+    height: 35px;
+    fill: #fff;
+    stroke: #fff;
+}
+
+.footer__links {
+    text-align: center;
+}
+
+.footer__media {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.footer__icon {
+    display: inline-block;
+    margin: 0 10px;
+
+}
+
+.footer__svg {
+    fill: #fff;
+    transition: fill .2s ease;
+}
+
+.footer__icon:hover  .footer__svg {
+    fill: #ff8000;
+}
+
+.footer__email {
+    color: #fff;
+    line-height: 1.1;
+    font-size: 18px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 400;
+
+    transition: color .2s ease;
+}
+
+.footer__email:hover {
+    color: rgba(255, 127, 0, 1);
+}
+
+.footer__copyright {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+}
+
+/*=================== Media Footer ===================*/
+
+@media (max-width: 767px) {
+
+    .footer__content {
+        flex-direction: column;
+    }
+
+    .footer__logo {
+        margin-bottom: 25px;
+    }
+
+
+}
+
+@media (max-width: 414px) {
+
+    .footer {
+        padding: 25px;
+    }
+
+
+    .footer__title {
+        font-size: 28px;
+    }
+
+    .footer__backpack {
+        width: 32px;
+        height: 32px;
+    }
+
+    .footer__media {
+        margin-bottom: 15px;
+    }
+}
+
+
