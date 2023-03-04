@@ -1,41 +1,56 @@
 /* Continue */
 
 .continue__link {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: $font-text;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 2rem;
     line-height: 1.5;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba($white, 0.9);
 
     width: 100%;
-    max-width: 200px;
+    max-width: 20rem;
     display: flex;
     align-items: center;
     transition: all .2s ease;
 }
 
 .continue__link--intro {
-    text-shadow: 1px 1px 2px #000;
+    text-shadow: 1px 1px 2px $black;
 }
 
 .continue__link:hover {
-    transform: translate3d(10px, 0, 0);
-    color: rgba(255, 127, 0, 1);
+    transform: translate3d(1rem, 0, 0);
+    color: $orange;
 }
 
 .continue__link span {
-    margin-right: 15px;
+    margin-right: 1.5rem;
 }
 
 .continue__icon {
-    fill: rgba(255, 255, 255, 0.9);
+    fill: rgba($white, 0.9);
+    width: 3rem;
+    height: 3rem;
 }
 
 .continue__link--intro .continue__icon {
-    filter: drop-shadow(1px 1px 2px #000);
+    filter: drop-shadow(1px 1px 2px $black);
 }
 
 
 .continue__link:hover .continue__icon {
-    fill: rgba(255, 127, 0, 1);
+    fill: $orange;
+}
+
+.continue__link--article {
+    font-size: 1.6rem;
+
+    span {
+        margin-right: 1rem;
+    }
+
+    > .continue__icon {
+        width: 2.2rem;
+        height: 2.2rem;
+    }
 }

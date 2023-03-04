@@ -17,7 +17,7 @@ title: ЛенБлог | Главная
                 </h2>
                 <a class="continue__link continue__link--intro" href="#">
                     <span>Читать статью</span>
-                    <svg class="continue__icon" id="arrow" width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="continue__icon" id="arrow" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2.4375 15C2.4375 15.5178 2.85724 15.9375 3.375 15.9375H26.5001C27.0178 15.9375 27.4376 15.5178 27.4376 15C27.4376 14.4822 27.0178 14.0625 26.5001 14.0625H3.375C2.85724 14.0625 2.4375 14.4822 2.4375 15Z"/>
                         <path d="M17.7121 5.58708C17.346 5.9532 17.346 6.5468 17.7121 6.91291L25.5782 14.779C25.7002 14.9011 25.7002 15.0989 25.5782 15.221L17.7121 23.0871C17.346 23.4532 17.346 24.0467 17.7121 24.4129C18.0782 24.779 18.6718 24.779 19.038 24.4129L26.9041 16.5467C27.7583 15.6925 27.7583 14.3075 26.9041 13.4532L19.038 5.58708C18.6718 5.22097 18.0782 5.22097 17.7121 5.58708Z"/>
                     </svg>
@@ -174,11 +174,55 @@ title: ЛенБлог | Главная
 <section class="article">
     <div class="container">
         <h1 class="article__suptitle">Все статьи</h1>
+
+        <div class="add-post">
+            <form class="add-post__form" action="/" method="post">
+                <textarea class="add-post__textarea" name="post" id="add-post-textarea" placeholder="Новая запись"></textarea>
+                <div class="add-post__group">
+                    <label class="add-post__file" for="add-post-file">
+                        <input type="file" id="add-post-file">
+                    </label>
+                    <button class="button__send" type="submit">
+                        <img src="assets/images/add-post/send.svg" alt="Отправить">
+                    </button>
+                </div>
+            </form>
+        </div>
+
         <div class="article__inner">
             <div class="article__page">
 
+               <article class="article__item">
+                    <div class="article__content">
+                        <h3 class="article__title">
+                            <a href="#">Павловский парк</a>
+                        </h3>
+                        <div class="article__text">
+                            <p>Павловский парк — пейзажный парк в составе Государственного музея-заповедника «Павловск». Расположен в долине реки Славянки в городе Павловске под Санкт-Петербургом, памятник русского классицизма конца XVIII — начала XIX веков с коллекциями русского, западноевропейского и античного искусства. Площадь парка составляет около 600 га.</p>
+                        </div>
+                        <ul class="article__footer">
+                            <li><a class="article__link" href="#">Методичка</a></li>
+                            <li>
+                                <svg class="article__icon" id="data-acticle" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.1875 14.0625H10.9375V7.8125H14.0625V10.9375H17.1875V14.0625ZM23.4375 1.5625V23.4375H1.5625V1.5625H23.4375ZM20.3125 4.6875H4.6875V20.3125H20.3125V4.6875Z"/>
+                                </svg>
+                                <time class="article__data" datetime="2022-04-23T20:18">23.04.2022</time>
+                            </li>
+                            <li>
+                                <a class="continue__link continue__link--article" href="#">
+                                    <span>Читать статью</span>
+                                    <svg class="continue__icon" id="arrow" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2.4375 15C2.4375 15.5178 2.85724 15.9375 3.375 15.9375H26.5001C27.0178 15.9375 27.4376 15.5178 27.4376 15C27.4376 14.4822 27.0178 14.0625 26.5001 14.0625H3.375C2.85724 14.0625 2.4375 14.4822 2.4375 15Z"/>
+                                        <path d="M17.7121 5.58708C17.346 5.9532 17.346 6.5468 17.7121 6.91291L25.5782 14.779C25.7002 14.9011 25.7002 15.0989 25.5782 15.221L17.7121 23.0871C17.346 23.4532 17.346 24.0467 17.7121 24.4129C18.0782 24.779 18.6718 24.779 19.038 24.4129L26.9041 16.5467C27.7583 15.6925 27.7583 14.3075 26.9041 13.4532L19.038 5.58708C18.6718 5.22097 18.0782 5.22097 17.7121 5.58708Z"/>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
                 <article class="article__item">
-                    <div class="article__photo">
+                    <div class="article__header">
                         <a href="#">
                             <img class="article__img" src="assets/images/article/page_1/1.jpg" alt="">
                         </a>
@@ -193,7 +237,7 @@ title: ЛенБлог | Главная
                         <ul class="article__footer">
                             <li><a class="article__link" href="#">Методичка</a></li>
                             <li>
-                                <svg class="article__icon" id="data-acticle" width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="article__icon" id="data-acticle" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M17.1875 14.0625H10.9375V7.8125H14.0625V10.9375H17.1875V14.0625ZM23.4375 1.5625V23.4375H1.5625V1.5625H23.4375ZM20.3125 4.6875H4.6875V20.3125H20.3125V4.6875Z"/>
                                 </svg>
                                 <time class="article__data" datetime="2022-04-23T20:18">23.04.2022</time>
@@ -203,7 +247,7 @@ title: ЛенБлог | Главная
                 </article>
 
                 <article class="article__item">
-                    <div class="article__photo">
+                    <div class="article__header">
                         <a href="#">
                             <img class="article__img" src="assets/images/article/page_1/2.jpg" alt="">
                         </a>
@@ -220,7 +264,7 @@ title: ЛенБлог | Главная
                         <ul class="article__footer">
                             <li><a class="article__link" href="#">Путеводитель</a></li>
                             <li>
-                                <svg class="article__icon" id="data-acticle" width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="article__icon" id="data-acticle" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M17.1875 14.0625H10.9375V7.8125H14.0625V10.9375H17.1875V14.0625ZM23.4375 1.5625V23.4375H1.5625V1.5625H23.4375ZM20.3125 4.6875H4.6875V20.3125H20.3125V4.6875Z"/>
                                 </svg>
                                 <time class="article__data" datetime="2022-11-19T22:39">19.11.2022</time>
@@ -230,7 +274,7 @@ title: ЛенБлог | Главная
                 </article>
 
                 <article class="article__item">
-                    <div class="article__photo">
+                    <div class="article__header">
                         <a href="#">
                             <img class="article__img" src="assets/images/article/page_1/3.jpg" alt="">
                         </a>
@@ -247,7 +291,7 @@ title: ЛенБлог | Главная
                         <ul class="article__footer">
                             <li><a class="article__link" href="#">Личный опыт</a></li>
                             <li>
-                                <svg class="article__icon" id="data-acticle" width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="article__icon" id="data-acticle" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M17.1875 14.0625H10.9375V7.8125H14.0625V10.9375H17.1875V14.0625ZM23.4375 1.5625V23.4375H1.5625V1.5625H23.4375ZM20.3125 4.6875H4.6875V20.3125H20.3125V4.6875Z"/>
                                 </svg>
                                 <time class="article__data" datetime="2022-02-04T16:37">04.02.2022</time>
@@ -257,7 +301,7 @@ title: ЛенБлог | Главная
                 </article>
 
                 <article class="article__item">
-                    <div class="article__photo">
+                    <div class="article__header">
                         <a href="#">
                             <img class="article__img" src="assets/images/article/page_1/4.jpg" alt="">
                         </a>
@@ -274,7 +318,7 @@ title: ЛенБлог | Главная
                         <ul class="article__footer">
                             <li><a class="article__link" href="#">Методичка</a></li>
                             <li>
-                                <svg class="article__icon" id="data-acticle" width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="article__icon" id="data-acticle" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M17.1875 14.0625H10.9375V7.8125H14.0625V10.9375H17.1875V14.0625ZM23.4375 1.5625V23.4375H1.5625V1.5625H23.4375ZM20.3125 4.6875H4.6875V20.3125H20.3125V4.6875Z"/>
                                 </svg>
                                 <time class="article__data" datetime="2022-09-14T19:05">14.09.2022</time>
@@ -284,7 +328,7 @@ title: ЛенБлог | Главная
                 </article>
 
                  <article class="article__item">
-                    <div class="article__photo">
+                    <div class="article__header">
                         <a href="#">
                             <img class="article__img" src="assets/images/article/page_1/5.jpg" alt="">
                         </a>
@@ -301,7 +345,7 @@ title: ЛенБлог | Главная
                         <ul class="article__footer">
                             <li><a class="article__link" href="#">Рекомендуемое</a></li>
                             <li>
-                                <svg class="article__icon" id="data-acticle" width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="article__icon" id="data-acticle" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M17.1875 14.0625H10.9375V7.8125H14.0625V10.9375H17.1875V14.0625ZM23.4375 1.5625V23.4375H1.5625V1.5625H23.4375ZM20.3125 4.6875H4.6875V20.3125H20.3125V4.6875Z"/>
                                 </svg>
                                 <time class="article__data" datetime="2022-06-25T15:00">25.06.2022</time>
@@ -311,7 +355,7 @@ title: ЛенБлог | Главная
                 </article>
 
                 <article class="article__item">
-                    <div class="article__photo">
+                    <div class="article__header">
                         <a href="#">
                             <img class="article__img" src="assets/images/article/page_1/6.jpg" alt="">
                         </a>
@@ -326,7 +370,7 @@ title: ЛенБлог | Главная
                         <ul class="article__footer">
                             <li><a class="article__link" href="#">Личный опыт</a></li>
                             <li>
-                                <svg class="article__icon" id="data-acticle" width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="article__icon" id="data-acticle" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M17.1875 14.0625H10.9375V7.8125H14.0625V10.9375H17.1875V14.0625ZM23.4375 1.5625V23.4375H1.5625V1.5625H23.4375ZM20.3125 4.6875H4.6875V20.3125H20.3125V4.6875Z"/>
                                 </svg>
                                 <time class="article__data" datetime="2022-08-23T17:30">23.08.2022</time>
@@ -340,7 +384,7 @@ title: ЛенБлог | Главная
 
            <!-- <div class="article__page">
                 <article class="article__item">
-                    <div class="article__photo">
+                    <div class="article__header">
                         <a href="#">
                             <img class="article__img" src="assets/images/article/page_2/1.jpg" alt="">
                         </a>
@@ -357,7 +401,7 @@ title: ЛенБлог | Главная
                         <ul class="article__footer">
                             <li><a class="article__link" href="#">Методичка</a></li>
                             <li>
-                                <svg class="article__icon" id="data-acticle" width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="article__icon" id="data-acticle" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M17.1875 14.0625H10.9375V7.8125H14.0625V10.9375H17.1875V14.0625ZM23.4375 1.5625V23.4375H1.5625V1.5625H23.4375ZM20.3125 4.6875H4.6875V20.3125H20.3125V4.6875Z"/>
                                 </svg>
                                 <time class="article__data" datetime="2022-03-28T12:38">28.03.2022</time>
@@ -367,7 +411,7 @@ title: ЛенБлог | Главная
                 </article>
 
                 <article class="article__item">
-                    <div class="article__photo">
+                    <div class="article__header">
                         <a href="#">
                             <img class="article__img" src="assets/images/article/page_2/2.jpg" alt="">
                         </a>
@@ -384,7 +428,7 @@ title: ЛенБлог | Главная
                         <ul class="article__footer">
                             <li><a class="article__link" href="#">Рекомендуемое</a></li>
                             <li>
-                                <svg class="article__icon" id="data-acticle" width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="article__icon" id="data-acticle" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M17.1875 14.0625H10.9375V7.8125H14.0625V10.9375H17.1875V14.0625ZM23.4375 1.5625V23.4375H1.5625V1.5625H23.4375ZM20.3125 4.6875H4.6875V20.3125H20.3125V4.6875Z"/>
                                 </svg>
                                 <time class="article__data" datetime="2021-06-19T13:15">19.06.2021</time>
@@ -394,7 +438,7 @@ title: ЛенБлог | Главная
                 </article>
 
                 <article class="article__item">
-                    <div class="article__photo">
+                    <div class="article__header">
                         <a href="#">
                             <img class="article__img" src="assets/images/article/page_2/3.jpg" alt="">
                         </a>
@@ -411,7 +455,7 @@ title: ЛенБлог | Главная
                         <ul class="article__footer">
                             <li><a class="article__link" href="#">Личный опыт</a></li>
                             <li>
-                                <svg class="article__icon" id="data-acticle" width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="article__icon" id="data-acticle" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M17.1875 14.0625H10.9375V7.8125H14.0625V10.9375H17.1875V14.0625ZM23.4375 1.5625V23.4375H1.5625V1.5625H23.4375ZM20.3125 4.6875H4.6875V20.3125H20.3125V4.6875Z"/>
                                 </svg>
                                 <time class="article__data" datetime="2022-07-07T20:48">07.07.2022</time>
@@ -421,7 +465,7 @@ title: ЛенБлог | Главная
                 </article>
 
                 <article class="article__item">
-                    <div class="article__photo">
+                    <div class="article__header">
                         <a href="#">
                             <img class="article__img" src="assets/images/article/page_2/4.jpg" alt="">
                         </a>
@@ -438,7 +482,7 @@ title: ЛенБлог | Главная
                         <ul class="article__footer">
                             <li><a class="article__link" href="#">Методичка</a></li>
                             <li>
-                                <svg class="article__icon" id="data-acticle" width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="article__icon" id="data-acticle" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M17.1875 14.0625H10.9375V7.8125H14.0625V10.9375H17.1875V14.0625ZM23.4375 1.5625V23.4375H1.5625V1.5625H23.4375ZM20.3125 4.6875H4.6875V20.3125H20.3125V4.6875Z"/>
                                 </svg>
                                 <time class="article__data" datetime="2021-04-15T12:29">15.04.2021</time>
@@ -448,7 +492,7 @@ title: ЛенБлог | Главная
                 </article>
 
                 <article class="article__item">
-                    <div class="article__photo">
+                    <div class="article__header">
                         <a href="#">
                             <img class="article__img" src="assets/images/article/page_2/5.jpg" alt="">
                         </a>
@@ -463,7 +507,7 @@ title: ЛенБлог | Главная
                         <ul class="article__footer">
                             <li><a class="article__link" href="#"></a>Рекомендуемое</li>
                             <li>
-                                <svg class="article__icon" id="data-acticle" width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="article__icon" id="data-acticle" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M17.1875 14.0625H10.9375V7.8125H14.0625V10.9375H17.1875V14.0625ZM23.4375 1.5625V23.4375H1.5625V1.5625H23.4375ZM20.3125 4.6875H4.6875V20.3125H20.3125V4.6875Z"/>
                                 </svg>
                                 <time class="article__data" datetime="2022-05-21T17:25">21.05.2022</time>
@@ -473,7 +517,7 @@ title: ЛенБлог | Главная
                 </article>
 
                 <article class="article__item">
-                    <div class="article__photo">
+                    <div class="article__header">
                         <a href="#">
                             <img class="article__img" src="assets/images/article/page_2/6.jpg" alt="">
                         </a>
@@ -488,7 +532,7 @@ title: ЛенБлог | Главная
                         <ul class="article__footer">
                             <li><a class="article__link" href="#">Методичка</a></li>
                             <li>
-                                <svg class="article__icon" id="data-acticle" width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                <svg class="article__icon" id="data-acticle" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M17.1875 14.0625H10.9375V7.8125H14.0625V10.9375H17.1875V14.0625ZM23.4375 1.5625V23.4375H1.5625V1.5625H23.4375ZM20.3125 4.6875H4.6875V20.3125H20.3125V4.6875Z"/>
                                 </svg>
                                 <time class="article__data" datetime="2021-08-10T15:34">10.08.2021</time>
@@ -499,9 +543,27 @@ title: ЛенБлог | Главная
 
             </div>--> <!-- ./article__page -->
 
+            <!-- pagination -->
+            <ul class="pagination">
+                <li class="pagination__item">
+                    <a class="pagination__link" href="#">&lt;</a>
+                </li>
+                <li class="pagination__item">
+                    <a class="pagination__link active" href="#">1</a>
+                </li>
+                <li class="pagination__item">
+                    <a class="pagination__link" href="#">2</a>
+                </li>
+                <li class="pagination__item">
+                    <a class="pagination__link" href="#">&gt;</a>
+                </li>
+            </ul> <!-- ./pagination -->
+
         </div>  <!-- ./article__inner -->
     </div>  <!-- ./container -->
 </section> <!-- ./article -->
+
+
 
 <!-- feedback -->
 <section class="feedback">
@@ -513,7 +575,7 @@ title: ЛенБлог | Главная
                 <input class="feedback__input" type="text" name="form_text_1" id="name" placeholder="Имя" value>
                 <input class="feedback__input" type="email" name="form_email_3" id="email" placeholder="Email" value>
                 <textarea class="feedback__input feedback__message" name="form_textarea_3" id="message" cols="30" rows="10" placeholder="Сообщение"></textarea>
-                <button class="feedback__btn" type="submit">Отправить</button>
+                <button class="button" type="submit">Отправить</button>
             </form>
         </div>
     </div>

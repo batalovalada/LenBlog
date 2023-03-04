@@ -1,0 +1,83 @@
+.add-post {
+    margin-bottom: 3rem;
+    padding: 2.5rem;
+    background-color: lighten($gray, 10%);
+    box-shadow: 0 10px 15px $black;
+
+    &__form {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    &__textarea {
+        display: block;
+        width: 80%;
+        padding: 1rem 1.5rem;
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid $gray-plr;
+
+        font-family: $font-text;
+        font-weight: 400;
+        line-height: 1.4;
+        font-size: 1.8rem;
+        color: $black;
+
+        resize: none;
+
+        &::placeholder {
+            color: $gray-plr;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: $black;
+        }
+
+    }
+
+    &__group {
+        width: 20%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__file {
+        display: block;
+        margin-right: 2rem;
+        height: 4.5rem;
+        width: 4.5rem;
+
+        background: $gray url(../images/add-post/camera.svg) center no-repeat;
+        border-radius: 50%;
+        border: 2px solid $gray-plr;
+
+        cursor: pointer;
+
+        transition: background-color .2s ease-in-out;
+
+        input {
+            display: none;
+        }
+
+        &:hover {
+            background-color: darken($gray, 5%);
+        }
+    }
+}
+
+
+/*=================== Media Add-Post ===================*/
+@media (max-width: 767px) {
+    .add-post__textarea {
+        width: 100%;
+        margin-bottom: 2.5rem;
+    }
+
+    .add-post__group {
+        width: 100%;
+        justify-content: center;
+    }
+}

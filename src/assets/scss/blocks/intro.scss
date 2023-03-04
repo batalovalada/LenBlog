@@ -3,11 +3,11 @@
     position: relative;
     width: 100%;
     height: 100vh;
-    min-height: 750px;
-    padding-top: 110px;
-    padding-right: 40px;
+    min-height: 75rem;
+    padding-top: 11rem;
+    padding-right: 4rem;
 
-    color: #fff;
+    color: $white;
 
 }
 
@@ -21,7 +21,7 @@
 
     height: 100%;
     width: 53%;
-    background-color: rgba(4, 60, 26, .9);
+    background-color: rgba($green, .9);
 
 }
 
@@ -37,7 +37,7 @@
 
     width: 65%;
     height: 75vh;
-    min-height: 600px;
+    min-height: 60rem;
 
     display: flex;
     align-items: flex-end;
@@ -45,7 +45,7 @@
     position: relative;
     z-index: 3;
 
-    padding: 60px 210px 60px 20px;
+    padding: 6rem 21rem 6rem 2rem;
 
 }
 
@@ -53,7 +53,7 @@
     content: "";
     display: block;
     width: 100%;
-    max-width: 650px;
+    max-width: 65rem;
     height: 100%;
 
     position: absolute;
@@ -61,14 +61,14 @@
     right: 0;
     z-index: 4;
 
-    background-color: rgba(201, 201, 201, 0.4);
+    background-color: rgba($gray, 0.4);
 }
 
 .intro__titles {
     position: relative;
     z-index: 10;
     width: 100%;
-    max-width: 400px;
+    max-width: 40rem;
     height: 100%;
 
     display: flex;
@@ -77,66 +77,66 @@
 
     margin-left: auto;
 
-    color: #fff;
-    text-shadow: 1px 1px 2px #000;
+    color: $white;
+    text-shadow: 1px 1px 2px $black;
 }
 
 .intro__suptitle {
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 1.8rem;
     font-weight: 600;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba($white, 0.9);
 }
 
 .intro__title {
-    margin-bottom: 15px;
+    margin-bottom: 1.5rem;
 
-    transition: all .2s ease;
+    transition: transform .2s ease;
 }
 
 .intro__title:hover {
-    transform: translate3d(10px, 0, 0);
+    transform: translate3d(1rem, 0, 0);
 }
 
 .intro__title a {
-    font-family: 'Roboto Slab', serif;
-    font-size: 32px;
+    font-family: $font-title;
+    font-size: 3.2rem;
     font-weight: 600;
     line-height: 1.2;
     color: inherit;
 
-    text-shadow: 1px 1px 2px #000;
+    text-shadow: 1px 1px 2px $black;
 }
 
 .intro__subtitle {
-    margin-bottom: 40px;
+    margin-bottom: 4rem;
 
-    transition: all .2s ease;
+    transition: transform .2s ease;
 }
 
 .intro__subtitle:hover {
-    transform: translate3d(10px, 0, 0);
+    transform: translate3d(1rem, 0, 0);
 }
 
 .intro__subtitle a {
-    font-family: 'Roboto Slab', serif;
-    font-size: 24px;
+    font-family: $font-title;
+    font-size: 2.4rem;
     font-weight: 600;
     line-height: 1.2;
 
     color: inherit;
-    text-shadow: 1px 1px 2px #000;
+    text-shadow: 1px 1px 2px $black;
 }
 
 .intro__content {
     width: 27%;
-    max-width: 400px;
+    max-width: 40rem;
 
-    margin: auto 0 auto 70px;
+    margin: auto 0 auto 7rem;
 
-    font-size: 18px;
+    font-size: 1.8rem;
     font-weight: 300;
 }
 
@@ -146,10 +146,10 @@
 
     .intro {
         padding: 0;
-        margin-top: 110px;
+        margin-top: 11rem;
 
         height: auto;
-        background-color: rgba(4, 60, 26, .9);
+        background-color: rgba($green, .9);
     }
 
     .intro:after {
@@ -159,14 +159,14 @@
     .intro__banner {
         width: 100%;
         height: 100%;
-        max-height: 470px;
+        max-height: 47rem;
     }
 
     .intro__content {
         width: 100%;
         max-width: none;
         margin: 0;
-        padding: 30px;
+        padding: 3rem;
 
     }
 }
@@ -174,13 +174,13 @@
 @media (max-width: 767px) {
 
     .intro__banner {
-        min-height: 500px;
-        padding-right: 150px;
+        min-height: 50rem;
+        padding-right: 15rem;
     }
 
     .intro__content {
-        font-size: 16px;
-        padding: 30px 15px;
+        font-size: 1.6rem;
+        padding: 3rem 1.5rem;
     }
 
 
@@ -189,7 +189,7 @@
 @media (max-width: 600px) {
 
     .intro__banner {
-        padding: 30px;
+        padding: 3rem;
     }
 
     .intro__titles {
@@ -199,7 +199,7 @@
 
 @media (max-width: 414px) {
     .intro {
-        margin-top: 100px;
+        margin-top: 10rem;
     }
 }
 

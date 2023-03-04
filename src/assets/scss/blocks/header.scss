@@ -1,8 +1,8 @@
 /* Header */
 .header {
     width: 100%;
-    height: 110px;
-    padding: 30px 15px;
+    height: 11rem;
+    padding: 0 1.5rem;
 
     position: absolute;
     top: 0;
@@ -24,76 +24,46 @@
 
 .header__title {
     font-weight: 600;
-    font-size: 38px;
+    font-size: 3.8rem;
     line-height: 1.1;
-    margin-left: 10px;
+    margin-left: 1rem;
 }
 
 .header__icon {
-    fill: #000;
-    width: 40px;
-    height: 40px;
+    fill: $black;
+    width: 4rem;
+    height: 4rem;
 }
 
-.header__nav {
-    width: 52%;
-    display: flex;
-    justify-content: space-around;
-
-}
-
-.header__link {
-    margin: 0 15px;
-    display: inline-block;
-
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.1;
-    color: #fff;
-    text-align: center;
-
-    transition: all .2s ease;
-}
-
-.header__link:first-child {
-    margin-left: 0;
-}
-
-.header__link:last-child {
-    margin-right: 0;
-}
-
-.header__link:hover, .header__link:focus {
-    color: rgba(255, 127, 0, 1);
-}
 
 /*=================== Media Header ===================*/
+@media (max-width: 1230px) {
+    .header {
+        padding: 3rem 1.5rem;
+    }
+}
 
 @media (max-width: 991px) {
 
     .header__title {
-        font-size: 36px;
+        font-size: 3.6rem;
     }
 
-    .header__nav {
-        display: none;
-    }
 }
 
 @media (max-width: 414px) {
 
     .header {
-        padding: 20px 15px;
+        padding: 2rem 1.5rem;
     }
 
     .header__title {
-        font-size: 32px;
+        font-size: 3.2rem;
     }
 
     .header__icon {
-        height: 35px;
-        width: 35px;
+        height: 3.5rem;
+        width: 3.5rem;
     }
 
 }
