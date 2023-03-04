@@ -12,7 +12,7 @@
 
 .article__page {
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-auto-flow: dense;
     gap: 2rem;
 
@@ -25,28 +25,23 @@
     overflow: hidden;
 
     position: relative;
-    padding-bottom: 11.4rem;
+    padding-bottom: 13.5rem;
 
-}
+    &--text {
+        grid-column-start: span 3;
+    }
 
-.article__header {
-    position: relative;
-    height: 25rem;
-    overflow: hidden;
+    &--image {
+        grid-column-start: span 2;
+    }
+
 }
 
 .article__img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-
-    transform: scale(1.05);
-
     display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    height: auto;
+
 }
 
 
@@ -54,7 +49,7 @@
     margin-left: 2rem;
     padding: 1.5rem;
     background-color: rgba($light-orange, .8);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     transition: transform .2s ease;
 
     cursor: pointer;
@@ -76,7 +71,13 @@
 
 .article__text {
     padding: 0 2rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
+
+    height: 100%;
+    max-height: 13em;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .article__footer {
@@ -85,8 +86,12 @@
     bottom: 2rem;
     left: 0;
     z-index: 1;
-    padding: 1.5rem 0 1.5rem 2rem;
+    padding: 1.5rem 3rem 1.5rem 2rem;
     margin: 0;
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 
 
     background-color: rgba($green, 0.7);
@@ -97,11 +102,19 @@
     font-size: 1.6rem;
 }
 
+.article__footer__left {
+    margin-right: 2.5rem;
+    margin-bottom: .5rem;
+
+}
+
 .article__footer li {
     list-style-type: none;
     display: flex;
     align-items: center;
 }
+
+
 
 .article__link {
     margin-bottom: .7rem;
@@ -125,20 +138,28 @@
     fill: $white;
 }
 
-.article__data {
+.article__date {
     margin-left: 1rem;
 }
 
 
 /*=================== Media Article ===================*/
 
-@media (max-width: 1230px) {
+@media (max-width: 991px) {
 
-    .article__header {
-        height: 30rem;
+    .article__page {
+        grid-template-columns: repeat(2, 1fr);
+
     }
-}
 
+    .article__item {
+            &--text {
+                grid-column-start: span 2;
+            }
+
+        }
+
+}
 
 @media (max-width: 767px) {
 
@@ -151,6 +172,17 @@
 
     }
 
+    .article__item {
+            &--text {
+                grid-column-start: span 1;
+            }
+
+            &--image {
+                grid-column-start: span 1;
+            }
+
+        }
+
 }
 
 @media (max-width: 414px) {
@@ -160,11 +192,6 @@
         margin-bottom: 5rem;
         text-align: center;
     }
-
-    .article__header {
-        height: 25rem;
-    }
-
 
     .article__title a {
         font-size: 2.2rem;

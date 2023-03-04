@@ -55,6 +55,7 @@
 .feedback__input {
     width: 100%;
     height: 4rem;
+    display: block;
 
     padding: 1rem .5rem;
     background-color: transparent;
@@ -81,8 +82,9 @@
 }
 
 .feedback__message {
+    height: auto;
     resize: none;
-    padding: .5rem 1rem 8rem;
+    padding: .5rem 1rem;
 }
 
 
