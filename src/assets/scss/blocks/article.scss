@@ -57,23 +57,28 @@
     padding: 1.5rem;
     background-color: rgba($light-orange, .8);
     margin-bottom: 2rem;
+
+
 }
 
 
 
 
-.article__title a {
+.article__title-link {
+    display: block;
     font-family: $font-title;
     font-size: 2.4rem;
     font-weight: 600;
     line-height: 1.2;
 
-    color: inherit;
 
+
+    color: inherit;
     transition: transform .2s ease;
+
 }
 
-.article__title a:hover {
+.article__title-link:hover {
     transform: translate3d(1rem, 0, 0);
 }
 
