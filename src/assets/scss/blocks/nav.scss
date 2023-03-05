@@ -1,8 +1,13 @@
 .nav {
-    width: 53%;
+    width: 53.5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    background-color: $green;
+
+    padding-right: 1.5rem;
+
 }
 
 .nav__list {
@@ -15,8 +20,8 @@
     text-align: center;
     /*transition: background-color .2s ease;*/
     &:hover {
-        background-color: rgba($green, .9);
-        > .nav__link {
+        background-color: lighten($green, 2%);
+        .nav__link {
             color: $orange;
             &--has-subnav:after {
                 border-color: $orange transparent transparent transparent;

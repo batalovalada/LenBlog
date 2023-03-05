@@ -1,14 +1,15 @@
 /* Header */
 .header {
     width: 100%;
-    height: 11rem;
-    padding: 0 1.5rem;
+    padding: 0 0 0 1.5rem;
 
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
+
+    background-color: $white;
 }
 
 .header__inner {
@@ -39,7 +40,7 @@
 /*=================== Media Header ===================*/
 @media (max-width: 1230px) {
     .header {
-        padding: 3rem 1.5rem;
+        padding: 2rem 1.5rem;
     }
 }
 
@@ -52,10 +53,6 @@
 }
 
 @media (max-width: 414px) {
-
-    .header {
-        padding: 2rem 1.5rem;
-    }
 
     .header__title {
         font-size: 3.2rem;
