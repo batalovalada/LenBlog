@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Статья
+title: Заголовок статьи
 ---
 
 <div class="container">
     <article class="article__item article__item--open">
         <div class="article__actions">
-            <a class="article__actions__link" href="#">
+            <a class="article__actions__link" href="index.html">
                 <svg class="article__actions-icon" id="arrow-close" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
                     <path d="M2.4375 15C2.4375 15.5178 2.85724 15.9375 3.375 15.9375H26.5001C27.0178 15.9375 27.4376 15.5178 27.4376 15C27.4376 14.4822 27.0178 14.0625 26.5001 14.0625H3.375C2.85724 14.0625 2.4375 14.4822 2.4375 15Z"/>
                     <path d="M17.7121 5.58708C17.346 5.9532 17.346 6.5468 17.7121 6.91291L25.5782 14.779C25.7002 14.9011 25.7002 15.0989 25.5782 15.221L17.7121 23.0871C17.346 23.4532 17.346 24.0467 17.7121 24.4129C18.0782 24.779 18.6718 24.779 19.038 24.4129L26.9041 16.5467C27.7583 15.6925 27.7583 14.3075 26.9041 13.4532L19.038 5.58708C18.6718 5.22097 18.0782 5.22097 17.7121 5.58708Z"/>
@@ -15,15 +15,11 @@ title: Статья
             </a>
             <a class="article__actions__link" href="#">
                 <span>Поделиться</span>
-                <svg class="article__actions-icon" version="1.1" id="share" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
-                    <path d="M426.7,341.3c-29.1,0-54.8,14.7-70.2,36.9L167.4,278.1c1.9-7.1,3.3-14.4,3.3-22.1c0-7.7-1.3-15-3.3-22.1l189.1-100.1
-                    c15.4,22.3,41,36.9,70.2,36.9c47.1,0,85.3-38.2,85.3-85.3S473.8,0,426.7,0s-85.3,38.2-85.3,85.3c0,0.8,0.2,1.6,0.2,2.4l-199,105.4
-                    c-15.2-13.8-35.1-22.4-57.2-22.4C38.2,170.7,0,208.9,0,256s38.2,85.3,85.3,85.3c22.1,0,42-8.6,57.2-22.4l199,105.4
-                    c0,0.8-0.2,1.6-0.2,2.4c0,47.1,38.2,85.3,85.3,85.3s85.3-38.2,85.3-85.3S473.8,341.3,426.7,341.3z"/>
+                <svg class="article__actions-icon" id="share" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20 5.75a3.25 3.25 0 0 1-5.532 2.314L9.31 10.906a3.245 3.245 0 0 1-.001 2.192l5.156 2.84a3.25 3.25 0 1 1-.922 1.775l-5.478-3.017a3.25 3.25 0 1 1 .004-5.389l5.474-3.018A3.25 3.25 0 1 1 20 5.75z"/>
                 </svg>
             </a>
-        </div>
+        </div> <!-- ./article__actions -->
         <div class="article__header">
             <h1 class="article__title">
                 Крепость в Копорье
@@ -37,8 +33,8 @@ title: Статья
                     <time class="article__date" datetime="2022-11-19T22:39">19.11.2022</time>
                 </li>
             </ul>
-        </div>
-        <div class="article__content">
+        </div> <!-- ./article__header -->
+        <div class="article__content article__content--open">
 
             <div class="article__content-inner">
                 <h2>Title 2</h2>
@@ -75,6 +71,8 @@ title: Статья
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste eligendi, architecto minus dicta, natus obcaecati excepturi ea earum laborum autem reiciendis amet, omnis numquam perspiciatis deleniti voluptates nihil officia ad.</p>
 
+                <h4>Title 4</h4>
+
                 <ul>
                     <li>Lorem ipsum dolor</li>
                     <li>Lorem ipsum dolor</li>
@@ -83,9 +81,11 @@ title: Статья
                     <li>Lorem ipsum dolor</li>
                 </ul>
 
-                <h4>Title 4</h4>
+                <h5>Title 5</h5>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde cum porro nesciunt molestiae dolorum quibusdam nisi doloribus mollitia at repudiandae harum eligendi qui, earum dicta sunt consequuntur, consectetur nam magnam.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore culpa expedita id nesciunt, quod at, quia hic iusto voluptate aut similique facilis accusantium incidunt. Totam, libero accusantium enim autem nemo. Nobis dicta dolores fuga, ipsa totam corporis nihil non possimus repellendus, sunt excepturi quam in at iste odit est exercitationem harum a porro. Eveniet quidem dolore consectetur, fugiat hic in.</p>
+
+                <h6>Title 6</h6>
 
                 <ol>
                     <li>Lorem ipsum dolor</li>
@@ -95,7 +95,201 @@ title: Статья
                     <li>Lorem ipsum dolor</li>
                 </ol>
 
-            </div>
-        </div>
-    </article>
-</div>
+            </div> <!-- ./article__content-inner -->
+
+
+            <!-- Related -->
+            <div class="related">
+                <h2 class="article__subtitle article__subtitle--white">Может быть интересно</h2>
+                <div class="related__inner">
+                    <div class="related__item">
+                       <div class="related__photo">
+                           <a href="article.html">
+                               <img class="related__img" src="assets/images/article/page_1/4.jpg" alt="Борницкий карьер">
+                           </a>
+                       </div>
+                       <div class="related__content">
+                           <h3 class="related__title">
+                               <a href="article.html">Борницкий карьер</a>
+                           </h3>
+                           <p class="related__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium omnis illo sequi ipsa vitae, voluptatibus, nihil eum!</p>
+                           <ul class="article__data article__data--open article__data--related">
+                               <li><a class="article__link" href="#">Методичка</a></li>
+                               <li>
+                                   <svg class="article__icon" id="date-acticle" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M17.1875 14.0625H10.9375V7.8125H14.0625V10.9375H17.1875V14.0625ZM23.4375 1.5625V23.4375H1.5625V1.5625H23.4375ZM20.3125 4.6875H4.6875V20.3125H20.3125V4.6875Z"/>
+                                   </svg>
+                                   <time class="article__date" datetime="2022-11-19T22:39">19.11.2022</time>
+                               </li>
+                            </ul>
+                       </div>
+                    </div> <!-- ./related__item -->
+
+                    <div class="related__item">
+                       <div class="related__photo">
+                           <a href="article.html">
+                               <img class="related__img" src="assets/images/popular/3.jpg" alt="Река Ижора. Посёлок Мыза-Ивановка">
+                           </a>
+                       </div>
+                       <div class="related__content">
+                           <h3 class="related__title">
+                               <a href="article.html">Река "Ижора". Посёлок Мыза-Ивановка</a>
+                           </h3>
+                           <p class="related__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium omnis illo sequi ipsa vitae, voluptatibus, nihil eum!</p>
+                           <ul class="article__data article__data--open article__data--related">
+                               <li><a class="article__link" href="#">Личный опыт</a></li>
+                               <li>
+                                   <svg class="article__icon" id="date-acticle" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M17.1875 14.0625H10.9375V7.8125H14.0625V10.9375H17.1875V14.0625ZM23.4375 1.5625V23.4375H1.5625V1.5625H23.4375ZM20.3125 4.6875H4.6875V20.3125H20.3125V4.6875Z"/>
+                                   </svg>
+                                   <time class="article__date" datetime="2022-11-19T22:39">19.11.2022</time>
+                               </li>
+                            </ul>
+                       </div>
+                    </div> <!-- ./related__item -->
+
+                    <div class="related__item">
+                       <div class="related__photo">
+                           <a href="article.html">
+                               <img class="related__img" src="assets/images/article/page_2/5.jpg" alt="Каньон реки Лавы">
+                           </a>
+                       </div>
+                       <div class="related__content">
+                           <h3 class="related__title">
+                               <a href="article.html">Каньон реки Лавы</a>
+                           </h3>
+                           <p class="related__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium omnis illo sequi ipsa vitae, voluptatibus, nihil eum!</p>
+                           <ul class="article__data article__data--open article__data--related">
+                               <li><a class="article__link" href="#">Рекомендуемое</a></li>
+                               <li>
+                                   <svg class="article__icon" id="date-acticle" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M17.1875 14.0625H10.9375V7.8125H14.0625V10.9375H17.1875V14.0625ZM23.4375 1.5625V23.4375H1.5625V1.5625H23.4375ZM20.3125 4.6875H4.6875V20.3125H20.3125V4.6875Z"/>
+                                   </svg>
+                                   <time class="article__date" datetime="2022-11-19T22:39">19.11.2022</time>
+                               </li>
+                            </ul>
+                       </div>
+                    </div> <!-- ./related__item -->
+
+                    <div class="related__item">
+                       <div class="related__photo">
+                           <a href="article.html">
+                               <img class="related__img" src="assets/images/article/page_2/2.jpg" alt="Ястребино. Хревицы. Каложицы">
+                           </a>
+                       </div>
+                       <div class="related__content">
+                           <h3 class="related__title">
+                               <a href="article.html">Ястребино. Хревицы. Каложицы</a>
+                           </h3>
+                           <p class="related__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium omnis illo sequi ipsa vitae, voluptatibus, nihil eum!</p>
+                           <ul class="article__data article__data--open article__data--related">
+                               <li><a class="article__link" href="#">Рекомендуемое</a></li>
+                               <li>
+                                   <svg class="article__icon" id="date-acticle" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M17.1875 14.0625H10.9375V7.8125H14.0625V10.9375H17.1875V14.0625ZM23.4375 1.5625V23.4375H1.5625V1.5625H23.4375ZM20.3125 4.6875H4.6875V20.3125H20.3125V4.6875Z"/>
+                                   </svg>
+                                   <time class="article__date" datetime="2022-11-19T22:39">19.11.2022</time>
+                               </li>
+                            </ul>
+                       </div>
+                    </div> <!-- ./related__item -->
+                </div> <!-- ./related__inner -->
+            </div> <!-- ./related -->
+
+           <!-- Comments -->
+           <div class="comments">
+               <h2 class="article__subtitle">Все комментарии</h2>
+
+               <form class="comments__form" action="/" method="post">
+                   <textarea class="feedback__input feedback__input--comments " name="comments-textarea" id="comments" placeholder="Написать комментарий..."></textarea>
+                   <button class="button__send" type="submit">
+                       <img src="assets/images/add-post/send.svg" alt="Отправить">
+                   </button>
+               </form>
+
+               <ul class="comments__list">
+                   <li class="comments__item">
+                       <div class="comments__header">
+                           <img class="comments__img" src="https://placehold.it/40" alt="">
+                           <div class="comments__author">
+                               <h5 class="comments__title">Иван Иванов</h5>
+                               <time class="comments__date" datetime="2022-06-07T19:28">07.06.2022.</time>
+                           </div>
+                       </div>
+                       <div class="comments__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum consequatur possimus beatae neque dignissimos dolorum modi libero doloribus perspiciatis ex reiciendis ea eius assumenda totam voluptatibus, repellendus nisi, iure tempore!</div>
+                       <div class="comments__btns">
+                           <button class="comments__reply" type="button">ответить</button>
+                           <button class="comments__reply comments__reply--all" type="button">скрыть ответы</button>
+                       </div>
+
+                       <ul class="comments__list">
+
+                           <li class="comments__item">
+                               <div class="comments__header">
+                                   <img class="comments__img" src="https://placehold.it/40" alt="">
+                                   <div class="comments__author">
+                                       <h5 class="comments__title">Иван Иванов</h5>
+                                       <time class="comments__date" datetime="2022-06-07T19:28">07.06.2022.</time>
+                                   </div>
+                               </div>
+                               <div class="comments__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum consequatur possimus beatae neque dignissimos dolorum modi libero doloribus perspiciatis ex reiciendis ea eius assumenda totam voluptatibus, repellendus nisi, iure tempore!</div>
+                                <div class="comments__btns">
+                                   <button class="comments__reply" type="button">ответить</button>
+                                   <button class="comments__reply comments__reply--all" type="button">показать ответы</button>
+                                </div>
+                           </li>
+
+                           <li class="comments__item">
+                               <div class="comments__header">
+                                   <img class="comments__img" src="https://placehold.it/40" alt="">
+                                   <div class="comments__author">
+                                       <h5 class="comments__title">Иван Иванов</h5>
+                                       <time class="comments__date" datetime="2022-06-07T19:28">07.06.2022.</time>
+                                   </div>
+                               </div>
+                               <div class="comments__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum consequatur possimus beatae neque dignissimos dolorum modi libero doloribus perspiciatis ex reiciendis ea eius assumenda totam voluptatibus, repellendus nisi, iure tempore!</div>
+                               <div class="comments__btns">
+                                   <button class="comments__reply" type="button">ответить</button>
+                                   <button class="comments__reply comments__reply--all" type="button">скрыть ответы</button>
+                                </div>
+
+                               <ul class="comments__list">
+                                   <li class="comments__item">
+                                       <div class="comments__header">
+                                           <img class="comments__img" src="https://placehold.it/40" alt="">
+                                           <div class="comments__author">
+                                               <h5 class="comments__title">Иван Иванов</h5>
+                                               <time class="comments__date" datetime="2022-06-07T19:28">07.06.2022.</time>
+                                           </div>
+                                       </div>
+                                       <div class="comments__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum consequatur possimus beatae neque dignissimos dolorum modi libero doloribus perspiciatis ex reiciendis ea eius assumenda totam voluptatibus, repellendus nisi, iure tempore!</div>
+                                       <div class="comments__btns">
+                                           <button class="comments__reply" type="button">ответить</button>
+                                       </div>
+                                   </li>
+                               </ul> <!-- ./comments__list -->
+                           </li>
+
+                       </ul> <!-- ./comments__list -->
+                   </li>
+
+                   <li class="comments__item">
+                       <div class="comments__header">
+                           <img class="comments__img" src="https://placehold.it/40" alt="">
+                           <div class="comments__author">
+                               <h5 class="comments__title">Иван Иванов</h5>
+                               <time class="comments__date" datetime="2022-06-07T19:28">07.06.2022.</time>
+                           </div>
+                       </div>
+                       <div class="comments__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum consequatur possimus beatae neque dignissimos dolorum modi libero doloribus perspiciatis ex reiciendis ea eius assumenda totam voluptatibus, repellendus nisi, iure tempore!</div>
+                       <div class="comments__btns">
+                           <button class="comments__reply" type="button">ответить</button>
+                       </div>
+                   </li>
+               </ul> <!-- ./comments__list -->
+           </div> <!-- ./comments -->
+
+
+        </div> <!-- ./article__content -->
+    </article> <!-- ./article__item -->
+</div> <!-- ./container -->

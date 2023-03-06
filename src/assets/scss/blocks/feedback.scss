@@ -81,10 +81,16 @@
     border-color: $light-orange;
 }
 
+.feedback__input--comments {
+    height: auto;
+    resize: none;
+    width: 93%;
+    margin-bottom: 0;
+}
+
 .feedback__message {
     height: auto;
     resize: none;
-    padding: .5rem 1rem;
 }
 
 
@@ -101,6 +107,10 @@
         font-size: 3.2rem;
     }
 
+    .feedback__input--comments {
+        width: 85%;
+    }
+
 }
 
 @media (max-width: 414px) {
@@ -111,6 +121,10 @@
 
     .feedback__subtitle {
         font-size: 2.4rem;
+    }
+
+    .feedback__input--comments {
+        width: 75%;
     }
 }
 

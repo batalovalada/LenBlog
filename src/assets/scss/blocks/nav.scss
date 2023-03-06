@@ -12,6 +12,7 @@
 
 .nav__list {
     display: flex;
+    list-style: none;
 }
 
 .nav__item {
@@ -79,7 +80,7 @@
 }
 
 
-/*=================== Media Header ===================*/
+/*=================== Media Nav ===================*/
 @media (max-width: 1230px) {
     .nav {
         display: none;
