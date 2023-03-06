@@ -143,6 +143,7 @@
     font-size: 1.8rem;
     font-weight: 600;
     margin-right: 0;
+    margin-bottom: 0;
 
     display: flex;
 
@@ -302,7 +303,7 @@
     font-size: 1.6rem;
     height: auto;
     max-height: none;
-    padding: 4rem 0 5rem;
+    margin-top: 4rem;
 
     h2, h3, h4, h5, h6 {
         font-weight: 700;
@@ -484,7 +485,7 @@
     }
 
     .article__content-inner {
-        padding: 3rem 0 4rem;
+        margin-top: 3rem;
     }
 
 }
