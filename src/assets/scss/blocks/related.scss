@@ -1,0 +1,130 @@
+.related {
+    margin: 0 -2rem 0;
+    background-color: rgba($green, 0.8);
+    padding: 3rem 2rem;
+}
+
+.related__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    gap: 2rem;
+}
+
+.related__item {
+    width: 48%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.related__photo {
+    width: 35%;
+    height: 12rem;
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.related__img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    object-fit: cover;
+
+
+}
+
+.related__content {
+    width: 65%;
+    padding-left: 2rem;
+    color: $white;
+}
+
+
+
+.related__title {
+    margin-bottom: .5rem;
+    color: $white;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+    a {
+
+        font-family: $font-title;
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 1.2;
+        color: inherit;
+
+        transition: .2s ease;
+
+        &:hover {
+            color: $orange;
+        }
+
+    }
+
+}
+
+.related__text {
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: $white;
+
+}
+
+/*=================== Media Related ===================*/
+
+@media (max-width: 991px) {
+    .related__item {
+        width: 100%;
+    }
+
+    .related__photo {
+        width: 30%;
+
+    }
+
+    .related__content {
+        width: 70%;
+    }
+}
+
+@media (max-width: 580px) {
+    .related__inner {
+        gap: 3.5rem;
+    }
+
+    .related__photo {
+        width: 100%;
+
+    }
+
+    .related__content {
+        width: 100%;
+        margin-top: 1.5rem;
+        padding-left: 0;
+    }
+
+}
+
+
+
+
+
+
+
+
+
