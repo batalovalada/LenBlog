@@ -37,8 +37,8 @@
 
 }
 
-/*=================== Media Article ===================*/
-@media (max-width: 414px) {
+/*=================== Media Pagination ===================*/
+@include media($mobile-br) {
     .pagination {
         margin-top: 5rem;
     }

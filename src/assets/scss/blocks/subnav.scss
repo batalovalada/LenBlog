@@ -27,4 +27,30 @@
     }
 }
 
+/*=================== Media Subnav ===================*/
+@include media($container-br) {
 
+    .subnav {
+        position: static;
+
+        background: none;
+
+        &__link {
+            text-align: left;
+
+            padding: 2rem 4.5rem;
+
+            &:hover {
+                background-color: lighten($green, 2%);
+            }
+        }
+    }
+
+}
+
+@include media($tablet-br-1) {
+    .subnav__link:hover {
+        background: none;
+        color: $white;
+    }
+}

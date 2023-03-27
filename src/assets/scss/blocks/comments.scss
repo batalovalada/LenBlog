@@ -106,17 +106,23 @@
 
 /*=================== Media Comments ===================*/
 
-@media (max-width: 767px) {
+@include media($tablet-br-2) {
     .comments {
         margin-top: 6rem;
     }
 }
 
 
-@media (max-width: 414px) {
+@include media($mobile-br) {
     .comments {
         margin-top: 4.5rem;
     }
+
+    .comments__item {
+        > .comments__list {
+            padding-left: 1.5rem;
+    }
+}
 }
 
 

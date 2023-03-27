@@ -8,12 +8,11 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        flex-wrap: wrap;
     }
 
     &__textarea {
         display: block;
-        width: 80%;
+        flex-grow: 1;
         padding: 1rem 1.5rem;
         background-color: transparent;
         border: none;
@@ -26,6 +25,7 @@
         color: $black;
 
         resize: none;
+       /* overflow: hidden;*/
 
         &::placeholder {
             color: $gray-plr;
@@ -39,16 +39,19 @@
     }
 
     &__group {
-        width: 20%;
+        flex-shrink: 0;
+        width: 9rem;
+        margin-left: 1.25rem;
         display: flex;
         justify-content: flex-end;
     }
 
     &__file {
+        flex-shrink: 0;
         display: block;
-        margin-right: 2rem;
-        height: 4.5rem;
-        width: 4.5rem;
+        margin-right: 1rem;
+        height: 4rem;
+        width: 4rem;
 
         background: $gray url(../images/add-post/camera.svg) center no-repeat;
         border-radius: 50%;
@@ -70,14 +73,15 @@
 
 
 /*=================== Media Add-Post ===================*/
-@media (max-width: 767px) {
-    .add-post__textarea {
-        width: 100%;
-        margin-bottom: 2.5rem;
-    }
 
-    .add-post__group {
-        width: 100%;
-        justify-content: center;
+@include media($mobile-br) {
+
+    .add-post {
+        padding: 1.5rem;
+
+        &__textarea {
+            font-size: 1.6rem;
+            padding: 1rem .5rem;
+        }
     }
 }

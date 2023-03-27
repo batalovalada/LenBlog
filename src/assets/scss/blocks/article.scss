@@ -1,13 +1,31 @@
 /* Article */
 .article {
-    margin: 0 0 8rem;
+    padding: 9rem 0;
+
+    &--search {
+        padding-top: 15rem;
+    }
+
+    &--on-page {
+        padding: 0;
+        margin: 9rem 0;
+    }
+}
+
+
+
+.article__main {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7rem;
+
 }
 
 .article__suptitle {
     font-weight: 600;
     font-size: 4.2rem;
     line-height: 1.2;
-    margin-bottom: 7rem;
+
 }
 
 .article__page {
@@ -93,11 +111,6 @@
 .article__text {
     margin-bottom: 2rem;
 
-    height: 100%;
-    max-height: 13em;
-
-    text-overflow: ellipsis;
-    overflow: hidden;
 }
 
 .article__footer {
@@ -118,7 +131,7 @@
 
 }
 
-.article__data, .article__footer__right {
+.article__data, .article__footer-right {
     font-family: $font-title;
     font-weight: 600;
     color: $white;
@@ -127,11 +140,10 @@
 
 .article__data {
     margin-right: 2.5rem;
-    margin-bottom: .5rem;
     list-style: none;
 
     li {
-
+        margin-bottom: .7rem;
         display: flex;
         align-items: center;
     }
@@ -143,13 +155,13 @@
     font-size: 1.8rem;
     font-weight: 600;
     margin-right: 0;
-    margin-bottom: 0;
 
     display: flex;
 
     li {
         margin-left: 4rem;
         position: relative;
+        margin-bottom: 0;
 
         &:before {
             content: "";
@@ -183,7 +195,6 @@
 .article__data--related {
     color: $white;
     font-size: 1.6rem;
-    margin-bottom: 0;
 
     li:before {
         background-color: $white;
@@ -191,8 +202,6 @@
 }
 
 .article__link {
-    margin-bottom: .7rem;
-
     font-family: $font-title;
     font-weight: 600;
     line-height: 1.5;
@@ -210,7 +219,6 @@
     .article__link {
         font-size: 1.8rem;
         font-weight: 600;
-        margin-bottom: 0;
     }
 }
 
@@ -251,7 +259,7 @@
 
 }
 
-.article__actions__link {
+.article__actions-link {
     display: flex;
     align-items: center;
     column-gap: 1rem;
@@ -260,7 +268,7 @@
     color: inherit;
     line-height: 1.2;
     font-weight: 400;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     transition: color .2s ease;
 
     &:hover {
@@ -270,8 +278,8 @@
 }
 
 .article__actions-icon {
-    width: 2.2rem;
-    height: 2.2rem;
+    width: 2rem;
+    height: 2rem;
 
     fill: $black;
     transition: fill .2s ease;
@@ -282,7 +290,7 @@
     transform: rotate(180deg);
 }
 
-.article__actions__link:hover .article__actions-icon {
+.article__actions-link:hover .article__actions-icon {
     fill: $orange;
 }
 
@@ -396,7 +404,7 @@
 
 /*=================== Media Article ===================*/
 
-@media (max-width: 991px) {
+@include media($tablet-br-1) {
 
     .article__page {
         grid-template-columns: repeat(2, 1fr);
@@ -412,10 +420,20 @@
 
 }
 
-@media (max-width: 767px) {
+@include media($tablet-br-2) {
+
+    .article__main {
+        flex-direction: column;
+    }
 
     .article__suptitle {
         font-size: 3.8rem;
+        margin-bottom: 3rem;
+
+        &--search {
+            font-size: 3.4rem;
+            margin-bottom: 0;
+        }
     }
 
     .article__page {
@@ -424,24 +442,45 @@
     }
 
     .article__item {
-            &--text {
-                grid-column-start: span 1;
-            }
-
-            &--image {
-                grid-column-start: span 1;
-            }
-
+        &--text {
+            grid-column-start: span 1;
         }
+
+        &--image {
+            grid-column-start: span 1;
+        }
+
+    }
+
+    .article__item--open {
+        margin: 13rem 0 9rem;
+    }
 
 }
 
-@media (max-width: 414px) {
+@include media($mobile-br) {
+
+    .article--search {
+        padding-top: 12rem;
+    }
+
+    .article__item--open {
+        margin: 11rem 0 7rem;
+    }
+
+    .article__main {
+        margin-bottom: 5rem;
+    }
 
     .article__suptitle {
         font-size: 3.6rem;
-        margin-bottom: 5rem;
+
         text-align: center;
+
+        &--search {
+            font-size: 2.6rem;
+        }
+
     }
 
     .article__title a {
@@ -453,16 +492,16 @@
     }
 
     .article__actions {
-        flex-direction: column;
+        margin-bottom: 2.5rem;
 
+        &-link {
+            font-size: 1.1rem;
+            column-gap: .5rem;
+        }
 
-        &__link {
-            margin-bottom: 2rem;
-            justify-content: center;
-
-            &:last-child {
-                margin-bottom: 0;
-            }
+        &-icon {
+            width: 1.5rem;
+            height: 1.5rem;
         }
     }
 

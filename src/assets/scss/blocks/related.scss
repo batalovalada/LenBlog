@@ -1,8 +1,12 @@
 .related {
-    margin: 0 -2rem 0;
+    margin: 6rem -2rem 0;
     background-color: rgba($green, 0.8);
     padding: 3rem 2rem;
-    margin-top: 6rem;
+
+    &--search {
+        margin: 0;
+        padding: 3rem 0;
+    }
 }
 
 .related__inner {
@@ -88,7 +92,7 @@
 
 /*=================== Media Related ===================*/
 
-@media (max-width: 991px) {
+@include media($tablet-br-1) {
     .related__item {
         width: 100%;
     }
@@ -103,7 +107,7 @@
     }
 }
 
-@media (max-width: 580px) {
+@include media(580px) {
 
     .related__inner {
         gap: 3.5rem;

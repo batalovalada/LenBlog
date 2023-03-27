@@ -4,7 +4,7 @@
     width: 100%;
     height: 100vh;
     min-height: 75rem;
-    padding-top: 11rem;
+    padding-top: 10rem;
     padding-right: 4rem;
 
     color: $white;
@@ -31,10 +31,6 @@
 }
 
 .intro__banner {
-    background: #8e9a9a url(../images/intro/intro.jpg) center no-repeat;
-    -webkit-background-size: cover;
-    background-size: cover;
-
     width: 65%;
     height: 75vh;
     min-height: 60rem;
@@ -62,6 +58,16 @@
     z-index: 4;
 
     background-color: rgba($gray, 0.4);
+}
+
+.intro__img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .intro__titles {
@@ -92,12 +98,27 @@
 
 .intro__title {
     margin-bottom: 1.5rem;
+    font-family: $font-title;
+    font-size: 3.2rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: $white;
 
     transition: transform .2s ease;
 }
 
 .intro__title:hover {
     transform: translate3d(1rem, 0, 0);
+}
+
+.intro__title--category {
+    color: rgba($orange, .8);
+    margin-bottom: 3rem;
+    font-size: 4.8rem;
+
+    &:hover {
+        transform: none;
+    }
 }
 
 .intro__title a {
@@ -142,11 +163,11 @@
 
 /*=================== Media Intro ===================*/
 
-@media (max-width: 991px) {
+@include media($tablet-br-1) {
 
     .intro {
         padding: 0;
-        margin-top: 11rem;
+        margin-top: 8.4rem;
 
         height: auto;
         background-color: rgba($green, .9);
@@ -158,8 +179,8 @@
 
     .intro__banner {
         width: 100%;
-        height: 100%;
-        max-height: 47rem;
+        height: calc(100vh - 8.4rem);
+        min-height: 50rem;
     }
 
     .intro__content {
@@ -171,11 +192,14 @@
     }
 }
 
-@media (max-width: 767px) {
+@include media($tablet-br-2) {
 
     .intro__banner {
-        min-height: 50rem;
         padding-right: 15rem;
+    }
+
+    .intro__title--category {
+        font-size: 3.6rem;
     }
 
     .intro__content {
@@ -186,7 +210,7 @@
 
 }
 
-@media (max-width: 600px) {
+@include media(600px) {
 
     .intro__banner {
         padding: 3rem;
@@ -197,9 +221,18 @@
     }
 }
 
-@media (max-width: 414px) {
+@include media($mobile-br) {
+
     .intro {
-        margin-top: 10rem;
+        margin-top: 7.9rem;
+    }
+
+    .intro__banner {
+        height: calc(100vh - 7.9rem);
+    }
+
+    .intro__title--category {
+        font-size: 2.8rem;
     }
 }
 

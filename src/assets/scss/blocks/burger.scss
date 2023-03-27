@@ -1,0 +1,100 @@
+.burger {
+    display: none;
+    position: absolute;
+    right: 1.5rem;
+    bottom: 2.1rem;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    padding: 1rem .5rem;
+
+
+    span {
+        display: block;
+        position: relative;
+
+        color: transparent;
+        font-size: 0;
+
+        background-color: $white;
+
+        height: .3rem;
+        width: 2.2rem;
+
+        transition: background-color .2s ease;
+
+        &:before, &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            right: 0;
+            z-index: 1;
+            height: 100%;
+            width: 100%;
+            background-color: $white;
+
+            transition: transform .2s ease;
+
+        }
+
+        &:before {
+            top: -.7rem;
+        }
+
+        &:after {
+            bottom: -.7rem;
+        }
+
+
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+
+    .show-nav & {
+        span {
+            background-color: transparent;
+
+
+            &:before {
+                transform: rotate(45deg);
+                top: 50%;
+
+            }
+
+            &:after {
+                transform: rotate(-45deg);
+                top: 50%;
+            }
+        }
+    }
+
+
+
+
+
+}
+
+
+/*=================== Media Burger ===================*/
+@include media($container-br) {
+    .burger {
+        display: block;
+    }
+}
+
+@include media($tablet-br-1) {
+    .burger {
+        span {
+            background-color: $black;
+
+            &:before, &:after {
+                background-color: $black;
+            }
+        }
+    }
+}

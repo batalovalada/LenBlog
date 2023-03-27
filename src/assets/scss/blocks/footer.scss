@@ -2,7 +2,9 @@
 
 .footer {
     background-color: $green;
-    padding: 4rem 0;
+    padding: 4rem 0 2.5rem;
+
+    margin-top: auto;
 }
 
 .footer__content {
@@ -38,27 +40,10 @@
 }
 
 .footer__media {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: 2rem;
 }
 
-.footer__icon {
-    display: inline-block;
-    margin: 0 1rem;
 
-}
-
-.footer__svg {
-    fill: $white;
-    transition: fill .2s ease, transform .2s ease;
-}
-
-.footer__icon:hover  .footer__svg {
-    fill: #ff8000;
-    transform: translateY(-.7rem);
-}
 
 .footer__email {
     color: $white;
@@ -83,7 +68,7 @@
 
 /*=================== Media Footer ===================*/
 
-@media (max-width: 767px) {
+@include media($tablet-br-2) {
 
     .footer__content {
         flex-direction: column;
@@ -96,10 +81,10 @@
 
 }
 
-@media (max-width: 414px) {
+@include media($mobile-br) {
 
     .footer {
-        padding: 2.5rem;
+        padding: 2.5rem 0 2rem;
     }
 
 

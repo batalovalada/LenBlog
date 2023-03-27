@@ -12,6 +12,19 @@
     background-color: $white;
 }
 
+.header:after {
+    content: "";
+    display: block;
+    width: 53%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+
+    background-color: $green;
+}
+
 .header__inner {
     display: flex;
     justify-content: space-between;
@@ -26,7 +39,7 @@
 .header__title {
     font-weight: 600;
     font-size: 3.8rem;
-    line-height: 1.1;
+    line-height: 1;
     margin-left: 1rem;
 }
 
@@ -38,13 +51,17 @@
 
 
 /*=================== Media Header ===================*/
-@media (max-width: 1230px) {
+@include media($container-br) {
     .header {
         padding: 2rem 1.5rem;
     }
 }
 
-@media (max-width: 991px) {
+@include media($tablet-br-1) {
+
+    .header:after {
+        display: none;
+    }
 
     .header__title {
         font-size: 3.6rem;
@@ -52,7 +69,7 @@
 
 }
 
-@media (max-width: 414px) {
+@include media($mobile-br) {
 
     .header__title {
         font-size: 3.2rem;

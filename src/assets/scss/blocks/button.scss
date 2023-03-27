@@ -1,5 +1,6 @@
 .button {
     background-color: transparent;
+    display: block;
 
     width: 100%;
     padding: .56em .83em;
@@ -14,6 +15,13 @@
     transition: all .2s ease;
 }
 
+.button--small {
+    width: 20rem;
+    border-radius: .5em;
+    border: none;
+    background-color: lighten($light-orange, 5%);
+}
+
 .button:hover {
     background-color: $light-orange;
     border-color: $light-orange;
@@ -21,15 +29,21 @@
 
 .button:focus {
     background-color: $light-orange;
-    border: 0;
+    border-color: $light-orange;
     outline: 0;
 }
 
-.button__send {
-    height: 4.5rem;
-    width: 4.5rem;
+
+
+.button-send {
+    font-size: 0;
+    color: transparent;
+    display: block;
+    flex-shrink: 0;
+    height: 4rem;
+    width: 4rem;
     border: none;
-    background-color: lighten($green, 5%);
+    background: lighten($green, 5%) url(../images/add-post/send.svg) center no-repeat;
     border-radius: 50%;
     padding: 0;
 
@@ -42,5 +56,28 @@
     }
 
 
+
+}
+
+
+.button-search {
+    width: 3rem;
+    height: 3rem;
+    display: block;
+    border: none;
+    background: none;
+    padding: 0;
+    flex-shrink: 0;
+
+    opacity: .7;
+
+    cursor: pointer;
+
+    transition: opacity .2s ease-in-out;
+
+    &:hover, &:focus {
+        opacity: 1;
+        outline: none;
+    }
 
 }

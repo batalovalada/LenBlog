@@ -1,0 +1,24 @@
+.social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.social__icon {
+    display: inline-block;
+    margin: 0 1rem;
+
+}
+
+.social__svg {
+    fill: $white;
+    width: 3.5rem;
+    height: 3.5rem;
+    transition: fill .2s ease, transform .2s ease;
+}
+
+.social__icon:hover  .social__svg {
+    fill: #ff8000;
+    transform: translateY(-.7rem);
+}

@@ -1,6 +1,6 @@
 /* Popular */
 .popular {
-    margin: 9rem 0;
+    margin: 9rem 0 0;
 }
 
 
@@ -123,7 +123,7 @@
 
 /*=================== Media Popular ===================*/
 
-@media (max-width: 1230px) {
+@include media($container-br) {
 
     .popular__inner {
         grid-template-columns: repeat(3, 1fr);
@@ -132,7 +132,7 @@
 
 }
 
-@media (max-width: 991px) {
+@include media($tablet-br-1) {
 
     .popular__inner {
         grid-template-columns: 1fr;
@@ -154,7 +154,7 @@
 
 }
 
-@media (max-width: 767px) {
+@include media($tablet-br-2) {
 
     .popular__line {
         width: 100%;
@@ -166,7 +166,7 @@
 }
 
 
-@media (max-width: 425px) {
+@include media(425px) {
 
     .popular__suptitle {
         font-size: 3.6rem;
