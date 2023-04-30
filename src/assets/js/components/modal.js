@@ -1,8 +1,9 @@
+//MODAL
 const modalBtn = document.querySelectorAll('[data-modal]');
 const modalClose = document.querySelectorAll('.modal__close');
 const modal = document.querySelectorAll('.modal');
-const body = document.body;
 
+//open modal
 modalBtn.forEach(item => {
     item.addEventListener('click', event => {
         let $this = event.currentTarget;
@@ -19,17 +20,17 @@ modalBtn.forEach(item => {
 
         setTimeout(() => {
             modalInner.style.transform = 'none';
+            modalInner.style.opacity = '1';
         }, 1);
-
 
     });
 });
 
 
+//close modal
 modalClose.forEach(item => {
     item.addEventListener('click', event => {
         let currentModal = event.currentTarget.closest('.modal');
-
         closeModal(currentModal);
     });
 });
@@ -38,9 +39,7 @@ modalClose.forEach(item => {
 modal.forEach(item => {
     item.addEventListener('click', event => {
         let currentModal = event.currentTarget;
-
         closeModal(currentModal);
-
     });
 });
 
@@ -53,3 +52,4 @@ function closeModal(currentModal) {
         body.classList.remove('no-scroll');
     }, 200);
 }
+

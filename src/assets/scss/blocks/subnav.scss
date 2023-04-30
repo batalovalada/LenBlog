@@ -33,6 +33,7 @@
     .subnav {
         position: static;
 
+        display: block;
         background: none;
 
         &__link {
@@ -41,16 +42,10 @@
             padding: 2rem 4.5rem;
 
             &:hover {
-                background-color: lighten($green, 2%);
+                background: none;
             }
         }
     }
 
 }
 
-@include media($tablet-br-1) {
-    .subnav__link:hover {
-        background: none;
-        color: $white;
-    }
-}

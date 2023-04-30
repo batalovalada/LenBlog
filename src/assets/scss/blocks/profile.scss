@@ -1,7 +1,8 @@
 .profile {
     height: 100vh;
-    min-height: 70rem;
+    min-height: 80rem;
 
+    padding-top: 8.4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -144,6 +145,7 @@
 
 /*=================== Media Profile ===================*/
 @include media($tablet-br-1) {
+
     .profile__form-inner {
         flex-direction: column-reverse;
         align-items: center;
@@ -151,6 +153,10 @@
     }
 
     .profile__avatar {
+        margin-bottom: 3rem;
+    }
+
+    .profile__title {
         margin-bottom: 3rem;
     }
 }

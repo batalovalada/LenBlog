@@ -15,8 +15,14 @@ body {
     line-height: 1.5;
     color: $black;
 
-    &.no-scroll, &.show-nav {
+    &.no-scroll {
         overflow: hidden;
+    }
+
+    @include media($container-br) {
+        &.show-nav {
+            overflow: hidden;
+        }
     }
 }
 

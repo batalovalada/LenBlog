@@ -26,8 +26,10 @@
     padding: 6rem 8rem 4rem;
     position: relative;
 
+    opacity: 0;
+
     transform: translateY(-5rem);
-    transition: transform .2s ease-in-out;
+    transition: transform .2s ease-in-out, opacity .2s ease-in-out;
 
 
 }
