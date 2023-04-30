@@ -2105,6 +2105,10 @@ p {
     border-left: 1px solid #000;
 }
 
+.comments__item::marker {
+    content: "";
+}
+
 .comments__header {
     display: flex;
     margin-bottom: 1.5rem;

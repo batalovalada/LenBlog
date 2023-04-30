@@ -22,6 +22,10 @@
         margin-top: 3rem;
         border-left: 1px solid $black;
     }
+
+    &::marker {
+        content: '';
+    }
 }
 
 .comments__header {

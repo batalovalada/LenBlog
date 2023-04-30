@@ -280,12 +280,12 @@
                         </div> <!-- ./related -->
             
                        <!-- Comments -->
-                       <div class="comments">
+                       <div class="comments" id="commentsList">
                            <h2 class="article__subtitle">Все комментарии</h2>
             
-                           <form class="comments__form" action="/" method="post">
-                               <textarea class="form__input form__input--comments " name="comments-textarea" id="comments" placeholder="Написать комментарий..."></textarea>
-                               <button class="button-send" type="submit">Отправить</button>
+                           <form class="comments__form" action="/" method="post" id="commentForm">
+                               <textarea class="form__input form__input--comments " name="comments-textarea" id="commentInput" placeholder="Написать комментарий..."></textarea>
+                               <button class="button-send" type="submit" id="commentBtn">Отправить</button>
                            </form>
             
                            <ul class="comments__list">
