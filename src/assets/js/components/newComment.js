@@ -10,10 +10,22 @@ commentForm.addEventListener('submit', newCommentHandler);
 
 function newCommentHandler(event) {
     event.preventDefault();
+    //when form is submitted cancel btn -> reply btn
+    const cancelButton = this.closest('li').querySelector('.cancelBtn');
+    if ( cancelButton != null) {
+        cancelButton.removeEventListener('click', cancelHandler);
+        cancelButton.classList.remove('cancelBtn');
+        cancelButton.classList.add('replyBtn');
+        cancelButton.innerText = 'ответить';
+    }
     const commentInput = this.querySelector('.commentInput');
     const commentsList = this.nextElementSibling;
     const comText = commentInput.value; //text from input
-
+    if (comText == '') {
+        this.remove();
+        if (commentsList.children[0] == undefined) commentsList.remove();
+        return 0;
+    }
     const newComment = createElement('li', 'comments__item');
     const commentHeader = createElement('div', 'comments__header');
     const commentImg = createElement('img', 'comments__img');
@@ -31,42 +43,44 @@ function newCommentHandler(event) {
     const commentText = createElement('div', 'comments__text');
     commentText.innerText = comText;
 
-    const commentBtns = createElement('div', 'comments__btns');
-    const deleteBtn = createElement('button', 'comments__reply');
-    deleteBtn.classList.add('deleteBtn');
+    const commentBtns = createElement('div', 'comments__btns commentBtns');
+    const deleteBtn = createElement('button', 'comments__reply deleteBtn');
     deleteBtn.setAttribute('type', 'button');
     deleteBtn.innerText = 'удалить';
-    const replyBtn = createElement('button', 'comments__reply');
-    replyBtn.classList.add('replyBtn');
+    const replyBtn = createElement('button', 'comments__reply replyBtn');
     replyBtn.setAttribute('type', 'button');
     replyBtn.innerText = 'ответить';
 
     //create .comments__item
-    commentAuthor.append(commentTitle);
-    commentAuthor.append(commentDate);
-
-    commentHeader.append(commentImg);
-    commentHeader.append(commentAuthor);
-
-    commentBtns.append(replyBtn);
+    commentAuthor.append(commentTitle, commentDate);
+    commentHeader.append(commentImg, commentAuthor);
+    commentBtns.append(replyBtn, deleteBtn);
     //reply btn event
     replyBtn.addEventListener('click', replyHandler);
-    commentBtns.append(deleteBtn);
     //delete btn event
     deleteBtn.addEventListener('click', function() {
         const ul = this.closest('ul');
         this.closest('li').remove();
-        if (ul.children[0] == undefined) ul.remove();
+        if (ul.children[0] == undefined) {
+            ul.closest('li').querySelector('.hideBtn').remove();
+            ul.remove();
+        }
     });
 
-    newComment.append(commentHeader);
-    newComment.append(commentText);
-    newComment.append(commentBtns);
-
+    newComment.append(commentHeader, commentText, commentBtns);
     commentsList.append(newComment);
 
     if (!this.classList.contains('mainComForm')) {
         this.remove();
+        //create hide btn for reply
+        const parentComBtns = commentsList.closest('li').querySelector('.commentBtns');
+        let hideBtn = parentComBtns.querySelector('.hideBtn');
+        if (hideBtn == null) {
+            hideBtn = createElement('button', 'comments__reply comments__reply--all hideBtn');
+            hideBtn.innerText = 'скрыть ответы';
+            hideBtn.addEventListener('click', hideHandler);
+            parentComBtns.append(hideBtn);
+        }
     }
     commentInput.value = '';
     commentInput.focus();
@@ -75,7 +89,8 @@ function newCommentHandler(event) {
 
 function createElement(tag, classEl) {
     const element = document.createElement(tag);
-    element.classList.add(classEl);
+    classEl = classEl.split(' '); //classEl include classes separated by a space
+    for (item of classEl) element.classList.add(item);
     return element
 }
 

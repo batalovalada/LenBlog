@@ -12,6 +12,10 @@
 .comments__list {
     margin-top: 5rem;
 
+    &.hide {
+        display: none;
+    }
+
 }
 
 .comments__item {

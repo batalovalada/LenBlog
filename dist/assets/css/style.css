@@ -2095,6 +2095,10 @@ p {
     margin-top: 5rem;
 }
 
+.comments__list.hide {
+    display: none;
+}
+
 .comments__item {
     margin-bottom: 3rem;
 }
