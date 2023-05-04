@@ -280,15 +280,15 @@
                         </div> <!-- ./related -->
             
                        <!-- Comments -->
-                       <div class="comments" id="commentsList">
+                       <div class="comments">
                            <h2 class="article__subtitle">Все комментарии</h2>
             
-                           <form class="comments__form" action="/" method="post" id="commentForm">
-                               <textarea class="form__input form__input--comments " name="comments-textarea" id="commentInput" placeholder="Написать комментарий..."></textarea>
+                           <form class="comments__form commentForm mainComForm" action="/" method="post">
+                               <textarea class="form__input form__input--comments commentInput" name="comments-textarea" placeholder="Написать комментарий..."></textarea>
                                <button class="button-send" type="submit" id="commentBtn">Отправить</button>
                            </form>
             
-                           <ul class="comments__list">
+                           <ul class="comments__list commentsList">
                                <li class="comments__item">
                                    <div class="comments__header">
                                        <img class="comments__img" src="https://placehold.it/40" alt="">
@@ -299,8 +299,8 @@
                                    </div>
                                    <div class="comments__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum consequatur possimus beatae neque dignissimos dolorum modi libero doloribus perspiciatis ex reiciendis ea eius assumenda totam voluptatibus, repellendus nisi, iure tempore!</div>
                                    <div class="comments__btns">
-                                       <button class="comments__reply" type="button">ответить</button>
-                                       <button class="comments__reply comments__reply--all" type="button">скрыть ответы</button>
+                                       <button class="comments__reply replyBtn" type="button">ответить</button>
+                                       <button class="comments__reply comments__reply--all hideBtn" type="button">скрыть ответы</button>
                                    </div>
             
                                    <ul class="comments__list">
@@ -315,8 +315,8 @@
                                            </div>
                                            <div class="comments__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum consequatur possimus beatae neque dignissimos dolorum modi libero doloribus perspiciatis ex reiciendis ea eius assumenda totam voluptatibus, repellendus nisi, iure tempore!</div>
                                             <div class="comments__btns">
-                                               <button class="comments__reply" type="button">ответить</button>
-                                               <button class="comments__reply comments__reply--all" type="button">показать ответы</button>
+                                               <button class="comments__reply replyBtn" type="button">ответить</button>
+                                               <button class="comments__reply comments__reply--all showBtn" type="button">показать ответы</button>
                                             </div>
                                        </li>
             
@@ -330,8 +330,8 @@
                                            </div>
                                            <div class="comments__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum consequatur possimus beatae neque dignissimos dolorum modi libero doloribus perspiciatis ex reiciendis ea eius assumenda totam voluptatibus, repellendus nisi, iure tempore!</div>
                                            <div class="comments__btns">
-                                               <button class="comments__reply" type="button">ответить</button>
-                                               <button class="comments__reply comments__reply--all" type="button">скрыть ответы</button>
+                                               <button class="comments__reply replyBtn" type="button">ответить</button>
+                                               <button class="comments__reply comments__reply--all hideBtn" type="button">скрыть ответы</button>
                                             </div>
             
                                            <ul class="comments__list">
@@ -345,7 +345,7 @@
                                                    </div>
                                                    <div class="comments__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum consequatur possimus beatae neque dignissimos dolorum modi libero doloribus perspiciatis ex reiciendis ea eius assumenda totam voluptatibus, repellendus nisi, iure tempore!</div>
                                                    <div class="comments__btns">
-                                                       <button class="comments__reply" type="button">ответить</button>
+                                                       <button class="comments__reply replyBtn" type="button">ответить</button>
                                                    </div>
                                                </li>
                                            </ul> <!-- ./comments__list -->
@@ -364,7 +364,7 @@
                                    </div>
                                    <div class="comments__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum consequatur possimus beatae neque dignissimos dolorum modi libero doloribus perspiciatis ex reiciendis ea eius assumenda totam voluptatibus, repellendus nisi, iure tempore!</div>
                                    <div class="comments__btns">
-                                       <button class="comments__reply" type="button">ответить</button>
+                                       <button class="comments__reply replyBtn" type="button">ответить</button>
                                    </div>
                                </li>
                            </ul> <!-- ./comments__list -->

@@ -1,4 +1,4 @@
-//NAV
+//=======================================NAV======================================
 const navBtn = document.getElementById('navToggle');
 const nav = document.getElementById('nav');
 const page = document.getElementById('page');

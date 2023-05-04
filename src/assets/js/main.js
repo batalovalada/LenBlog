@@ -1,4 +1,5 @@
 //= components/nav.js
 //= components/modal.js
-//= components/comments.js
+//= components/newComment.js
+//= components/commentButtons.js
 

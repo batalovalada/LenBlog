@@ -1,4 +1,4 @@
-//MODAL
+//=====================================MODAL=======================================
 const modalBtn = document.querySelectorAll('[data-modal]');
 const modalClose = document.querySelectorAll('.modal__close');
 const modal = document.querySelectorAll('.modal');
