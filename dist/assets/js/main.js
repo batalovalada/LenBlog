@@ -135,7 +135,9 @@ function newCommentHandler(event) {
     commentBtns.append(deleteBtn);
     //delete btn event
     deleteBtn.addEventListener('click', function() {
+        const ul = this.closest('ul');
         this.closest('li').remove();
+        if (ul.children[0] == undefined) ul.remove();
     });
 
     newComment.append(commentHeader);
@@ -171,6 +173,7 @@ const replyButtons = document.querySelectorAll('.replyBtn');
 const hideButtons = document.querySelectorAll('.hideBtn');
 const showButtons = document.querySelectorAll('.showBtn');
 
+//reply btn event
 replyButtons.forEach(item => {
     item.addEventListener('click', replyHandler);
 });
@@ -178,13 +181,20 @@ replyButtons.forEach(item => {
 function replyHandler(event) {
     event.preventDefault();
     const li = this.closest('li');
-    const ulChild = createElement('ul', 'comments__list'); //reply ul
-    const commentFormCopy = commentForm.cloneNode(true);
-    commentFormCopy.classList.remove('mainComForm');
-    commentFormCopy.style['margin-top'] = '1.5rem';
-    li.append(commentFormCopy);
-    const commentInput = commentFormCopy.querySelector('.commentInput');
+    let innerForm = li.querySelector('.commentForm'); //existing form in li
+    let innerUl = li.querySelector('.commentsList');  //existing ul in li
+    if (innerUl == null) {
+        innerUl = createElement('ul', 'comments__list');
+        innerUl.classList.add('commentsList');
+        li.append(innerUl);
+    }
+    if (innerForm == null) {
+        innerForm = commentForm.cloneNode(true);
+        innerForm.classList.remove('mainComForm');
+        innerForm.style['margin-top'] = '1.5rem';
+        innerUl.parentNode.insertBefore(innerForm, innerUl)
+    }
+    const commentInput = innerForm.querySelector('.commentInput');
     commentInput.focus();
-    li.append(ulChild);
-    commentFormCopy.addEventListener('submit', newCommentHandler);
+    innerForm.addEventListener('submit', newCommentHandler);
 }

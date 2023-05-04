@@ -54,7 +54,9 @@ function newCommentHandler(event) {
     commentBtns.append(deleteBtn);
     //delete btn event
     deleteBtn.addEventListener('click', function() {
+        const ul = this.closest('ul');
         this.closest('li').remove();
+        if (ul.children[0] == undefined) ul.remove();
     });
 
     newComment.append(commentHeader);
