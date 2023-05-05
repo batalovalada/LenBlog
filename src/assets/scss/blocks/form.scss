@@ -37,6 +37,10 @@
         border-color: $gray-plr;
 
     }
+
+    &--feedback {
+        margin-bottom: 0;
+    }
 }
 
 .form__input::placeholder {
@@ -65,6 +69,23 @@
 .form__message {
     height: auto;
     resize: none;
+}
+
+.form__error-label {
+    color: $red;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.2;
+    font-family: $font-text;
+
+    position: absolute;
+    bottom: -2rem;
+    left: 1.5rem;
+    z-index: 1;
+}
+
+.form__error .form__input {
+    border-color: $red;
 }
 
 /*=================== Media Form ===================*/

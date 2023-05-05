@@ -1097,6 +1097,10 @@ p {
     margin: 9rem 0 0;
 }
 
+.popular--on-page {
+    margin: 10rem 0 0;
+}
+
 .popular__header {
     position: relative;
     width: 100%;
@@ -1775,6 +1779,10 @@ p {
     border-color: #5c5c5c;
 }
 
+.form__input--feedback {
+    margin-bottom: 0;
+}
+
 .form__input::-moz-placeholder {
     color: #5c5c5c;
 }
@@ -1806,6 +1814,22 @@ p {
     resize: none;
 }
 
+.form__error-label {
+    color: #a22c2a;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.2;
+    font-family: "Ubuntu", sans-serif;
+    position: absolute;
+    bottom: -2rem;
+    left: 1.5rem;
+    z-index: 1;
+}
+
+.form__error .form__input {
+    border-color: #a22c2a;
+}
+
 /*=================== Media Form ===================*/
 @media (max-width: 767px) {
     .form--search {
@@ -1829,7 +1853,7 @@ p {
 
 .add-post__form {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
 }
 
@@ -2049,6 +2073,11 @@ p {
 .feedback__subtitle {
     font-size: 3.6rem;
     font-weight: 600;
+    margin-bottom: 3rem;
+}
+
+.feedback__item {
+    position: relative;
     margin-bottom: 3rem;
 }
 

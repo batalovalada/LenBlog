@@ -44,12 +44,12 @@
                             </li>
         
                             <li class="nav__item">
-                                <a class="nav__link" href="#">Популярное</a>
+                                <a class="nav__link" href="popular.html">Популярное</a>
                             </li>
         
         
                             <li class="nav__item">
-                                <a class="nav__link nav__link--has-subnav" href="#">Статьи</a>
+                                <a class="nav__link nav__link--has-subnav" href="all_articles.html">Статьи</a>
                                 <ul class="subnav">
                                     <li class="subnav__item">
                                         <a class="subnav__link" href="guide.html">Путеводитель</a>
@@ -250,8 +250,6 @@
             
                 </div> <!-- ./popular__inner -->
             </section> <!-- ./popular -->
-            
-            
             
             
             <!-- articles -->
@@ -719,10 +717,16 @@
                     <div class="feedback__inner">
                         <h1 class="feedback__title">Знаете интересные места?</h1>
                         <h2 class="feedback__subtitle">Расскажите нам о них!</h2>
-                        <form class="form" action="/" method="post" novalidate="true">
-                            <input class="form__input" type="text" name="feedback_text_1" id="name" placeholder="Имя" value>
-                            <input class="form__input" type="email" name="feedback_email_3" id="email" placeholder="Email" value>
-                            <textarea class="form__input form__message" name="feedback_textarea_3" id="message" cols="1" rows="5" placeholder="Сообщение"></textarea>
+                        <form class="form" id="messageForm" action="/" method="post" novalidate="true">
+                            <div class="feedback__item">
+                                <input class="form__input form__input--feedback" type="text" name="feedback_text_1" id="name" placeholder="Имя" data-required="true" value>
+                            </div>
+                            <div class="feedback__item">
+                                <input class="form__input form__input--feedback" type="email" name="feedback_email_3" id="email" placeholder="Email" data-email="true" data-required="true" value>
+                            </div>
+                            <div class="feedback__item">
+                                <textarea class="form__input form__message form__input--feedback" name="feedback_textarea_3" id="message" cols="1" rows="3" placeholder="Сообщение" data-required="true" data-resize></textarea>
+                            </div>
                             <button class="button" type="submit">Отправить</button>
                         </form>
                     </div>
