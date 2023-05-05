@@ -1,5 +1,11 @@
-//======================================NEW COMMENT======================================
+//================================NEW COMMENT======================================
 const commentForm = document.querySelector('.commentForm');
+const commentFormH = commentForm.querySelector('.commentInput').offsetHeight;
+
+const commentFormCopy = commentForm.cloneNode(true); //form copy for reply
+commentFormCopy.classList.remove('mainComForm');
+commentFormCopy.style['margin-top'] = '1.5rem';
+
 //const profileName = document.getElementById('profileName').value;
 const profileName = 'John Martin';
 //const profileAvatar = document.getElementById('profileAvatar').src;
@@ -10,9 +16,9 @@ commentForm.addEventListener('submit', newCommentHandler);
 
 function newCommentHandler(event) {
     event.preventDefault();
-    //when form is submitted cancel btn -> reply btn
-    const cancelButton = this.closest('li').querySelector('.cancelBtn');
-    if ( cancelButton != null) {
+    //when reply form is submitted cancel btn -> reply btn
+    if (!this.classList.contains('mainComForm')) {
+        const cancelButton = this.closest('li').querySelector('.cancelBtn');
         cancelButton.removeEventListener('click', cancelHandler);
         cancelButton.classList.remove('cancelBtn');
         cancelButton.classList.add('replyBtn');
@@ -31,25 +37,22 @@ function newCommentHandler(event) {
     const commentImg = createElement('img', 'comments__img');
     commentImg.src = profileAvatar;
     const commentAuthor = createElement('div', 'comments__author');
-    const commentTitle = createElement('h5', 'comments__title');
-    commentTitle.innerText = profileName;
+    const commentTitle = createElement('h5', 'comments__title', profileName);
 
-    const commentDate = createElement('time', 'comments__date');
+    //comment date
     let commentTime = new Date();
-    commentTime = ComDate(commentTime);
-    commentDate.innerText = `${commentTime[2]}.${commentTime[1]}.${commentTime[0]}.`;
+    commentTime = comDate(commentTime);
+    const commentDate = createElement('time', 'comments__date', `${commentTime[2]}.${commentTime[1]}.${commentTime[0]}. ${commentTime[3]}:${commentTime[4]}`);
     commentDate.setAttribute('dateTime', `${commentTime[0]}-${commentTime[1]}-${commentTime[2]}T${commentTime[3]}:${commentTime[4]}`);
 
-    const commentText = createElement('div', 'comments__text');
-    commentText.innerText = comText;
+    const commentText = createElement('div', 'comments__text', comText);
 
+    //reply and delete btns
     const commentBtns = createElement('div', 'comments__btns commentBtns');
-    const deleteBtn = createElement('button', 'comments__reply deleteBtn');
+    const deleteBtn = createElement('button', 'comments__reply deleteBtn', 'удалить');
     deleteBtn.setAttribute('type', 'button');
-    deleteBtn.innerText = 'удалить';
-    const replyBtn = createElement('button', 'comments__reply replyBtn');
+    const replyBtn = createElement('button', 'comments__reply replyBtn', 'ответить');
     replyBtn.setAttribute('type', 'button');
-    replyBtn.innerText = 'ответить';
 
     //create .comments__item
     commentAuthor.append(commentTitle, commentDate);
@@ -70,35 +73,41 @@ function newCommentHandler(event) {
     newComment.append(commentHeader, commentText, commentBtns);
     commentsList.append(newComment);
 
+    //remove form if it was for reply
     if (!this.classList.contains('mainComForm')) {
         this.remove();
         //create hide btn for reply
         const parentComBtns = commentsList.closest('li').querySelector('.commentBtns');
         let hideBtn = parentComBtns.querySelector('.hideBtn');
         if (hideBtn == null) {
-            hideBtn = createElement('button', 'comments__reply comments__reply--all hideBtn');
-            hideBtn.innerText = 'скрыть ответы';
+            hideBtn = createElement('button', 'comments__reply comments__reply--all hideBtn', 'скрыть ответы');
             hideBtn.addEventListener('click', hideHandler);
             parentComBtns.append(hideBtn);
         }
     }
-    commentInput.value = '';
-    commentInput.focus();
 
+    commentInput.value = '';
+    commentInput.style.height = commentFormH + 'px';
+    commentInput.focus();
 }
 
-function createElement(tag, classEl) {
+function createElement(tag, classEl, inText = '') {
     const element = document.createElement(tag);
     classEl = classEl.split(' '); //classEl include classes separated by a space
     for (item of classEl) element.classList.add(item);
+    element.innerText = inText;
     return element
 }
 
-function ComDate(commentTime) {
-    const comYear = commentTime.getFullYear();
-    const comMonth = `${commentTime.getMonth()+1}`.length == 1 ? `0${commentTime.getMonth()+1}` : `${commentTime.getMonth()+1}`;
-    const comDay = `${commentTime.getDate()}`.length == 1 ? `0${commentTime.getDate()}` : `${commentTime.getDate()}`;
-    const comHours = commentTime.getHours();
-    const comMinutes = commentTime.getMinutes();
+function comDate(commentTime) { //commentTime = new Date
+    const comYear = `${commentTime.getFullYear()}`;
+    const comMonth = rigthTime(commentTime.getMonth()+1);
+    const comDay = rigthTime(commentTime.getDate());
+    const comHours = rigthTime(commentTime.getHours());
+    const comMinutes = rigthTime(commentTime.getMinutes());
     return [comYear, comMonth, comDay, comHours, comMinutes]
+}
+
+function rigthTime(partTime) {
+    return `${partTime}`.length == 1 ? `0${partTime}` : `${partTime}`
 }
