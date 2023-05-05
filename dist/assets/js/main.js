@@ -87,16 +87,9 @@ textarea.forEach(item => {
     item.addEventListener('input', event => {
         let $this = event.target;
         $this.style.height = textareaHeight + 'px';
-        $this.style.height = $this.scrollHeight + 'px';
+        $this.style.height = $this.scrollHeight + 2 + 'px';
     });
 });
-
-/*
-function textareaHandler() {
-    this.style.height = textareaHeight + 'px';
-    this.style.height = this.scrollHeight + 'px';
-}
-*/
 //================================NEW COMMENT======================================
 const commentForm = document.querySelector('.commentForm');
 const commentFormH = commentForm.querySelector('.commentInput').offsetHeight;
@@ -186,6 +179,7 @@ function newCommentHandler(event) {
     }
 
     commentInput.value = '';
+    commentInput.style.height = commentFormH + 'px';
     commentInput.focus();
 }
 
@@ -228,21 +222,20 @@ function replyHandler(event) {
         li.append(innerUl);
     }
     if (innerForm == null) {
-        innerForm = commentFormCopy; //copy of main comment form
+        innerForm = commentFormCopy.cloneNode(true); //copy of main comment form
         innerUl.parentNode.insertBefore(innerForm, innerUl);
-        var inputForm = innerForm.querySelector('.commentInput');
-        inputForm.addEventListener('input', event => {
-            let $this = event.target;
-            $this.style.height = commentFormH + 'px';
-            $this.style.height = $this.scrollHeight + 'px';
-        });
         //during input reply btn -> cancel btn
         this.classList.remove('replyBtn');
         this.classList.add('cancelBtn');
         this.innerText = 'отмена';
         this.addEventListener('click', cancelHandler, {once: true});
     }
-    inputForm = innerForm.querySelector('.commentInput');
+    const inputForm = innerForm.querySelector('.commentInput');
+    inputForm.addEventListener('input', event => {
+        let $this = event.target;
+        $this.style.height = commentFormH + 'px';
+        $this.style.height = $this.scrollHeight + 2 + 'px';
+    });
     inputForm.focus();
     innerForm.addEventListener('submit', newCommentHandler);
     inputForm.value = '';
