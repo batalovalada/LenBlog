@@ -87,6 +87,7 @@ function newCommentHandler(event) {
     }
 
     commentInput.value = '';
+    commentInput.style.height = commentFormH + 'px';
     commentInput.focus();
 }
 

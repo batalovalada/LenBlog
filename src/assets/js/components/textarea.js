@@ -6,13 +6,7 @@ textarea.forEach(item => {
     item.addEventListener('input', event => {
         let $this = event.target;
         $this.style.height = textareaHeight + 'px';
-        $this.style.height = $this.scrollHeight + 'px';
+        $this.style.height = $this.scrollHeight + 2 + 'px';
     });
 });
 
-/*
-function textareaHandler() {
-    this.style.height = textareaHeight + 'px';
-    this.style.height = this.scrollHeight + 'px';
-}
-*/
