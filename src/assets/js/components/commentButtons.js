@@ -17,21 +17,28 @@ function replyHandler(event) {
         li.append(innerUl);
     }
     if (innerForm == null) {
-        innerForm = commentForm.cloneNode(true);
-        innerForm.classList.remove('mainComForm');
-        innerForm.style['margin-top'] = '1.5rem';
+        innerForm = commentFormCopy; //copy of main comment form
         innerUl.parentNode.insertBefore(innerForm, innerUl);
+        var inputForm = innerForm.querySelector('.commentInput');
+        inputForm.addEventListener('input', event => {
+            let $this = event.target;
+            $this.style.height = commentFormH + 'px';
+            $this.style.height = $this.scrollHeight + 'px';
+        });
+        //during input reply btn -> cancel btn
         this.classList.remove('replyBtn');
         this.classList.add('cancelBtn');
         this.innerText = 'отмена';
         this.addEventListener('click', cancelHandler, {once: true});
     }
-    const commentInput = innerForm.querySelector('.commentInput');
-    commentInput.focus();
+    inputForm = innerForm.querySelector('.commentInput');
+    inputForm.focus();
     innerForm.addEventListener('submit', newCommentHandler);
+    inputForm.value = '';
+    inputForm.style.height = commentFormH + 'px';
 }
 
-//hide and show btns event
+//hide btn event
 hideButtons.forEach(item => {
     item.addEventListener('click', hideHandler);
 });
@@ -43,7 +50,7 @@ function hideHandler(event) {
     this.innerText = innerUl.classList.contains('hide') ? 'показать ответы' : 'скрыть ответы';
 }
 
-//cancel btn
+//cancel btn handler
 function cancelHandler() {
     const li = this.closest('li');
     li.querySelector('.commentForm').remove();
