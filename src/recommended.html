@@ -58,8 +58,8 @@ title: Рекомендуемое
             </form>
         </div>
 
-        <div class="article__inner">
-            <div class="article__page">
+        <div class="article__inner articlePages">
+            <div class="article__page show page1">
 
                  <article class="article__item article__item--text">
                     <div class="article__content">
@@ -83,15 +83,6 @@ title: Рекомендуемое
                                     <time class="article__date" datetime="2022-06-25T15:00">25.06.2022</time>
                                 </li>
                             </ul>
-                            <div class="article__footer-right">
-                                <a class="continue__link continue__link--article" href="article.html">
-                                    <span>Читать статью</span>
-                                    <svg class="continue__icon" id="arrow" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M2.4375 15C2.4375 15.5178 2.85724 15.9375 3.375 15.9375H26.5001C27.0178 15.9375 27.4376 15.5178 27.4376 15C27.4376 14.4822 27.0178 14.0625 26.5001 14.0625H3.375C2.85724 14.0625 2.4375 14.4822 2.4375 15Z"/>
-                                        <path d="M17.7121 5.58708C17.346 5.9532 17.346 6.5468 17.7121 6.91291L25.5782 14.779C25.7002 14.9011 25.7002 15.0989 25.5782 15.221L17.7121 23.0871C17.346 23.4532 17.346 24.0467 17.7121 24.4129C18.0782 24.779 18.6718 24.779 19.038 24.4129L26.9041 16.5467C27.7583 15.6925 27.7583 14.3075 26.9041 13.4532L19.038 5.58708C18.6718 5.22097 18.0782 5.22097 17.7121 5.58708Z"/>
-                                    </svg>
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </article>
@@ -138,13 +129,13 @@ title: Рекомендуемое
             <!-- pagination -->
             <ul class="pagination">
                 <li class="pagination__item">
-                    <a class="pagination__link" href="#">&lt;</a>
+                    <a class="pagination__link" href="#" data-page=".previousPage">&lt;</a>
                 </li>
                 <li class="pagination__item">
-                    <a class="pagination__link active" href="#">1</a>
+                    <a class="pagination__link active" href="#" data-page=".page1">1</a>
                 </li>
                 <li class="pagination__item">
-                    <a class="pagination__link" href="#">&gt;</a>
+                    <a class="pagination__link" href="#" data-page=".nextPage">&gt;</a>
                 </li>
             </ul> <!-- ./pagination -->
 
