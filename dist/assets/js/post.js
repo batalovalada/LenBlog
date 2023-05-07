@@ -1,6 +1,7 @@
 //=================================POST=======================================
 const firstPage = document.getElementById('page1');
 const addPostForm = document.getElementById('add-post_form');
+const textareaHeight = document.getElementById('add-post-textarea').offsetHeight;
 
 //create post pattern
 const postPattern = createElement('article', 'article__item article__item--text');
@@ -69,7 +70,7 @@ function  newPostHandler() {
     //clear form
     articleTitle.value = '';
     articleText.value = '';
-
+    document.getElementById('add-post-textarea').style.height = textareaHeight + 'px';
 }
 
 
