@@ -91,6 +91,7 @@ function newCommentHandler(event) {
     commentInput.focus();
 }
 
+//=================Create Element function======================
 function createElement(tag, classEl, inText = '') {
     const element = document.createElement(tag);
     classEl = classEl.split(' '); //classEl include classes separated by a space

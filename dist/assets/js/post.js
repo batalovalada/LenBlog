@@ -1,8 +1,31 @@
 //=================================POST=======================================
 const firstPage = document.getElementById('page1');
 const addPostForm = document.getElementById('add-post_form');
-const postPattern = document.querySelector('.article__item--text').cloneNode(true);
 
+//create post pattern
+const postPattern = createElement('article', 'article__item article__item--text');
+const postContent = createElement('div', 'article__content');
+const postTitleLink = createElement('a', 'article__title-link');
+postTitleLink.href = 'article.html';
+const postTitle = createElement('h3', 'article__title');
+const postText = createElement('div', 'article__text');
+const postFooter = `<div class="article__footer">
+                            <ul class="article__data">
+                                <li><a class="article__link" href="#"></a></li>
+                                <li>
+                                    <svg class="article__icon" id="date-acticle" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17.1875 14.0625H10.9375V7.8125H14.0625V10.9375H17.1875V14.0625ZM23.4375 1.5625V23.4375H1.5625V1.5625H23.4375ZM20.3125 4.6875H4.6875V20.3125H20.3125V4.6875Z"/>
+                                    </svg>
+                                    <time class="article__date" datetime=""></time>
+                                </li>
+                            </ul>
+                        </div>`;
+postTitleLink.append(postTitle);
+postContent.append(postTitleLink, postText);
+postContent.insertAdjacentHTML('beforeend', postFooter);
+postPattern.append(postContent);
+
+//add post event
 addPostForm.addEventListener('submit', newPostHandler)
 
 function  newPostHandler() {
@@ -62,4 +85,13 @@ function getDate(Time) { //Time = new Date
 
 function rigthTime(partTime) {
     return `${partTime}`.length == 1 ? `0${partTime}` : `${partTime}`
+}
+
+//=================Create Element function======================
+function createElement(tag, classEl='', inText = '') {
+    const element = document.createElement(tag);
+    classEl = classEl.split(' '); //classEl include classes separated by a space
+    for (item of classEl) element.classList.add(item);
+    element.innerText = inText;
+    return element
 }
