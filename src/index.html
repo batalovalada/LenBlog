@@ -184,7 +184,32 @@ title: ЛенБлог | Главная
 
         <div class="add-post">
             <form class="add-post__form" action="/" method="post" id="add-post_form1">
-                <textarea class="add-post__textarea" name="post" id="add-post-textarea1" placeholder="Новая запись" data-resize></textarea>
+                <div class="add-post__inputs">
+                    <input type="text" class="add-post__input" name="article-header" placeholder="Заголовок записи" id="add-post-input1">
+                    <textarea class="add-post__input add-post__textarea" name="post" id="add-post-textarea1" placeholder="Новая запись" data-resize></textarea>
+                    <div class="add-post__type">
+                        <div class="add-post__radio">
+                            <input type="radio" id="experience1" name="add-post_type" value="experience" checked>
+                            <label for="experience1">Личный опыт</label>
+                        </div>
+
+                        <div class="add-post__radio">
+                            <input type="radio" id="guide1" name="add-post_type" value="guide">
+                            <label for="guide1">Путеводитель</label>
+                        </div>
+
+                        <div class="add-post__radio">
+                            <input type="radio" id="manual1" name="add-post_type" value="manual">
+                            <label for="manual1">Методичка</label>
+                        </div>
+
+                        <div class="add-post__radio">
+                            <input type="radio" id="recommended1" name="add-post_type" value="recommended">
+                            <label for="recommended1">Рекомендуемое</label>
+                        </div>
+
+                    </div> <!-- ./add-post__type -->
+                </div> <!-- ./add-post__inputs -->
                 <div class="add-post__group">
                     <label class="add-post__file" for="add-post-file1">
                         <input type="file" id="add-post-file1">

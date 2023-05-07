@@ -10,10 +10,17 @@
         justify-content: space-between;
     }
 
-    &__textarea {
+    &__inputs {
         display: block;
+        width: 100%;
+    }
+
+    &__input {
+        display: block;
+        width: 100%;
         flex-grow: 1;
         padding: 1rem 1.5rem;
+        margin-bottom: 1.5rem;
         background-color: transparent;
         border: none;
         border-bottom: 2px solid $gray-plr;
@@ -23,9 +30,6 @@
         line-height: 1.4;
         font-size: 1.8rem;
         color: $black;
-
-        resize: none;
-       /* overflow: hidden;*/
 
         &::placeholder {
             color: $gray-plr;
@@ -38,10 +42,38 @@
 
     }
 
+    &__textarea {
+        resize: none;
+    }
+
+    &__type {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+
+        &.hide {
+            display: none;
+        }
+    }
+
+    &__radio {
+        font-family: $font-text;
+        font-size: 1.6rem;
+        line-height: 1.1;
+        font-weight: 400;
+        color: $black;
+        width: 25%;
+
+        label {
+            padding-left: .5rem;
+        }
+    }
+
     &__group {
         flex-shrink: 0;
-        width: 9rem;
-        margin-left: 1.25rem;
+        width: 10.75rem;
+        padding-left: 1.75rem;
         display: flex;
         justify-content: flex-end;
     }
@@ -73,15 +105,51 @@
 
 
 /*=================== Media Add-Post ===================*/
+@include media($tablet-br-1) {
+    .add-post {
+        &__type {
+            row-gap: 1rem;
+        }
+
+        &__radio {
+            width: 50%;
+        }
+    }
+}
+
+@include media($tablet-br-2) {
+    .add-post {
+        &__radio {
+            width: 100%;
+        }
+    }
+}
 
 @include media($mobile-br) {
 
     .add-post {
         padding: 1.5rem;
 
-        &__textarea {
-            font-size: 1.6rem;
+        &__input {
+            font-size: 1.4rem;
             padding: 1rem .5rem;
+        }
+
+        &__radio {
+            font-size: 1.4rem;
+            label {
+                padding-left: .25rem;
+            }
+        }
+
+        &__group {
+            width: 9rem;
+            padding-left: 1rem;
+        }
+
+        &__file {
+            width: 3.5rem;
+            height: 3.5rem;
         }
     }
 }

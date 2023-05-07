@@ -829,6 +829,12 @@ p {
     outline: none;
 }
 
+@media (max-width: 414px) {
+    .button-send {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+}
 /* Intro */
 .intro {
     position: relative;
@@ -1861,10 +1867,17 @@ p {
     justify-content: space-between;
 }
 
-.add-post__textarea {
+.add-post__inputs {
     display: block;
+    width: 100%;
+}
+
+.add-post__input {
+    display: block;
+    width: 100%;
     flex-grow: 1;
     padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
     background-color: transparent;
     border: none;
     border-bottom: 2px solid #5c5c5c;
@@ -1873,27 +1886,53 @@ p {
     line-height: 1.4;
     font-size: 1.8rem;
     color: #000;
-    resize: none;
-  /* overflow: hidden;*/
 }
 
-.add-post__textarea::-moz-placeholder {
+.add-post__input::-moz-placeholder {
     color: #5c5c5c;
 }
 
-.add-post__textarea::placeholder {
+.add-post__input::placeholder {
     color: #5c5c5c;
 }
 
-.add-post__textarea:focus {
+.add-post__input:focus {
     outline: none;
     border-color: #000;
 }
 
+.add-post__textarea {
+    resize: none;
+}
+
+.add-post__type {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.add-post__type.hide {
+    display: none;
+}
+
+.add-post__radio {
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.1;
+    font-weight: 400;
+    color: #000;
+    width: 25%;
+}
+
+.add-post__radio label {
+    padding-left: 0.5rem;
+}
+
 .add-post__group {
     flex-shrink: 0;
-    width: 9rem;
-    margin-left: 1.25rem;
+    width: 10.75rem;
+    padding-left: 1.75rem;
     display: flex;
     justify-content: flex-end;
 }
@@ -1920,14 +1959,48 @@ p {
 }
 
 /*=================== Media Add-Post ===================*/
+@media (max-width: 991px) {
+    .add-post__type {
+        row-gap: 1rem;
+    }
+
+    .add-post__radio {
+        width: 50%;
+    }
+}
+
+@media (max-width: 767px) {
+    .add-post__radio {
+        width: 100%;
+    }
+}
+
 @media (max-width: 414px) {
     .add-post {
         padding: 1.5rem;
     }
 
-    .add-post__textarea {
-        font-size: 1.6rem;
+    .add-post__input {
+        font-size: 1.4rem;
         padding: 1rem 0.5rem;
+    }
+
+    .add-post__radio {
+        font-size: 1.4rem;
+    }
+
+    .add-post__radio label {
+        padding-left: 0.25rem;
+    }
+
+    .add-post__group {
+        width: 9rem;
+        padding-left: 1rem;
+    }
+
+    .add-post__file {
+        width: 3.5rem;
+        height: 3.5rem;
     }
 }
 

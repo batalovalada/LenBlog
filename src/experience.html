@@ -47,7 +47,32 @@ title: Личный опыт
 
         <div class="add-post">
             <form class="add-post__form" action="/" method="post" id="add-post_form4">
-                <textarea class="add-post__textarea" name="post" id="add-post-textarea4" placeholder="Новая запись" data-resize></textarea>
+                <div class="add-post__inputs">
+                    <input type="text" class="add-post__input" name="article-header" id="add-post-input4" placeholder="Заголовок записи">
+                    <textarea class="add-post__input add-post__textarea" name="post" id="add-post-textarea4" placeholder="Новая запись" data-resize></textarea>
+                    <div class="add-post__type hide">
+                        <div class="add-post__radio">
+                            <input type="radio" id="experience4" name="add-post_type" value="experience" checked>
+                            <label for="experience4">Личный опыт</label>
+                        </div>
+
+                        <div class="add-post__radio">
+                            <input type="radio" id="guide4" name="add-post_type" value="guide">
+                            <label for="guide4">Путеводитель</label>
+                        </div>
+
+                        <div class="add-post__radio">
+                            <input type="radio" id="manual4" name="add-post_type" value="manual">
+                            <label for="manual4">Методичка</label>
+                        </div>
+
+                        <div class="add-post__radio">
+                            <input type="radio" id="recommended4" name="add-post_type" value="recommended">
+                            <label for="recommended4">Рекомендуемое</label>
+                        </div>
+
+                    </div> <!-- ./add-post__type -->
+                </div> <!-- ./add-post__inputs -->
                 <div class="add-post__group">
                     <label class="add-post__file" for="add-post-file4">
                         <input type="file" id="add-post-file4">
