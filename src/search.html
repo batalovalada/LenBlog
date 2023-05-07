@@ -10,8 +10,8 @@ title: Результаты поиска
             <h1 class="article__suptitle article__suptitle--search">Результаты поиска "Методичка"</h1>
         </div>
 
-        <div class="article__inner articlePages">
-            <div class="article__page show page1">
+        <div class="article__inner" id="articlePages">
+            <div class="article__page show" id="page1">
 
                  <div class="article__item article__item--text">
                     <div class="article__content">
@@ -121,13 +121,13 @@ title: Результаты поиска
             <!-- pagination -->
             <ul class="pagination">
                 <li class="pagination__item">
-                    <a class="pagination__link" href="#" data-page=".previousPage">&lt;</a>
+                    <a class="pagination__link" href="#" data-page="#previousPage">&lt;</a>
                 </li>
                 <li class="pagination__item">
-                    <a class="pagination__link active" href="#" data-page=".page1">1</a>
+                    <a class="pagination__link active" href="#" data-page="#page1">1</a>
                 </li>
                 <li class="pagination__item">
-                    <a class="pagination__link" href="#" data-page=".nextPage">&gt;</a>
+                    <a class="pagination__link" href="#" data-page="#nextPage">&gt;</a>
                 </li>
             </ul> <!-- ./pagination -->
 
@@ -235,3 +235,7 @@ title: Результаты поиска
         </div> <!-- ./related__inner -->
     </div> <!-- ./container -->
 </div> <!-- ./related -->
+
+
+<!-- Javascript -->
+<script defer src="assets/js/articlePages.min.js"></script>

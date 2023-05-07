@@ -8,8 +8,8 @@ title: ЛенБлог | Все статьи
     <div class="container">
         <div class="article__main">
             <h1 class="article__suptitle">Все статьи</h1>
-            <form class="form form--search" action="search.html" method="get" id="search_form6">
-                <input type="text" class="form__input form__input--search" name="search" id="article-search6" placeholder="Поиск статьи">
+            <form class="form form--search" action="search.html" method="get" id="search_form">
+                <input type="text" class="form__input form__input--search" name="search" id="article-search" placeholder="Поиск статьи">
                 <button class="button-search" type="button">
                     <img src="assets/images/search.svg" alt="Поиск">
                 </button>
@@ -17,44 +17,44 @@ title: ЛенБлог | Все статьи
         </div>
 
         <div class="add-post">
-            <form class="add-post__form" action="/" method="post" id="add-post_form6">
+            <form class="add-post__form" action="/" method="post" id="add-post_form">
                 <div class="add-post__inputs">
-                    <input type="text" class="add-post__input" name="article-header" placeholder="Заголовок записи" id="add-post-input6">
-                    <textarea class="add-post__input add-post__textarea" name="post" id="add-post-textarea6" placeholder="Новая запись" data-resize></textarea>
+                    <input type="text" class="add-post__input" name="article-header" placeholder="Заголовок записи" id="add-post-input">
+                    <textarea class="add-post__input add-post__textarea" name="post" id="add-post-textarea" placeholder="Новая запись" data-resize></textarea>
                     <div class="add-post__type">
                         <div class="add-post__radio">
-                            <input type="radio" id="experience6" name="add-post_type" value="experience" checked>
-                            <label for="experience6">Личный опыт</label>
+                            <input type="radio" id="experience" name="add-post_type" value="experience" checked>
+                            <label for="experience">Личный опыт</label>
                         </div>
 
                         <div class="add-post__radio">
-                            <input type="radio" id="guide6" name="add-post_type" value="guide">
-                            <label for="guide6">Путеводитель</label>
+                            <input type="radio" id="guide" name="add-post_type" value="guide">
+                            <label for="guide">Путеводитель</label>
                         </div>
 
                         <div class="add-post__radio">
-                            <input type="radio" id="manual6" name="add-post_type" value="manual">
-                            <label for="manual6">Методичка</label>
+                            <input type="radio" id="manual" name="add-post_type" value="manual">
+                            <label for="manual">Методичка</label>
                         </div>
 
                         <div class="add-post__radio">
-                            <input type="radio" id="recommended6" name="add-post_type" value="recommended">
-                            <label for="recommended6">Рекомендуемое</label>
+                            <input type="radio" id="recommended" name="add-post_type" value="recommended">
+                            <label for="recommended">Рекомендуемое</label>
                         </div>
 
                     </div> <!-- ./add-post__type -->
                 </div> <!-- ./add-post__inputs -->
                 <div class="add-post__group">
-                    <label class="add-post__file" for="add-post-file6">
-                        <input type="file" id="add-post-file6">
+                    <label class="add-post__file" for="add-post-file">
+                        <input type="file" id="add-post-file">
                     </label>
                     <button class="button-send" type="submit">Отправить</button>
                 </div>
             </form>
         </div>
 
-        <div class="article__inner articlePages">
-            <div class="article__page show page1">
+        <div class="article__inner" id="articlePages">
+            <div class="article__page show" id="page1">
 
                <div class="article__item article__item--text">
                     <div class="article__content">
@@ -259,7 +259,7 @@ title: ЛенБлог | Все статьи
             </div>  <!-- ./article__page -->
 
 
-            <div class="article__page page2">
+            <div class="article__page" id="page2">
                 <article class="article__item">
                     <div class="article__header">
                         <a href="article.html">
@@ -437,7 +437,7 @@ title: ЛенБлог | Все статьи
                 </article>
 
             </div> <!-- ./article__page -->
-            <div class="article__page page3">
+            <div class="article__page" id="page3">
 
                <div class="article__item article__item--text">
                     <div class="article__content">
@@ -645,19 +645,19 @@ title: ЛенБлог | Все статьи
             <!-- pagination -->
             <ul class="pagination">
                 <li class="pagination__item">
-                    <a class="pagination__link" href="#" data-page=".previousPage">&lt;</a>
+                    <a class="pagination__link" href="#" data-page="#previousPage">&lt;</a>
                 </li>
                 <li class="pagination__item">
-                    <a class="pagination__link active" href="#" data-page=".page1">1</a>
+                    <a class="pagination__link active" href="#" data-page="#page1">1</a>
                 </li>
                 <li class="pagination__item">
-                    <a class="pagination__link" href="#" data-page=".page2">2</a>
+                    <a class="pagination__link" href="#" data-page="#page2">2</a>
                 </li>
                 <li class="pagination__item">
-                    <a class="pagination__link" href="#" data-page=".page3">3</a>
+                    <a class="pagination__link" href="#" data-page="#page3">3</a>
                 </li>
                 <li class="pagination__item">
-                    <a class="pagination__link" href="#" data-page=".nextPage">&gt;</a>
+                    <a class="pagination__link" href="#" data-page="#nextPage">&gt;</a>
                 </li>
             </ul> <!-- ./pagination -->
 
@@ -765,3 +765,10 @@ title: ЛенБлог | Все статьи
         </div> <!-- ./related__inner -->
     </div> <!-- ./container -->
 </div> <!-- ./related -->
+
+
+
+
+<!-- Javascript -->
+<script defer src="assets/js/articlePages.min.js"></script>
+<script defer src="assets/js/post.min.js"></script>

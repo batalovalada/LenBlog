@@ -118,8 +118,8 @@
                 <div class="container">
                     <div class="article__main">
                         <h1 class="article__suptitle">Все статьи</h1>
-                        <form class="form form--search" action="search.html" method="get" id="search_form3">
-                            <input type="text" class="form__input form__input--search" name="search" id="article-search3" placeholder="Поиск статьи">
+                        <form class="form form--search" action="search.html" method="get" id="search_form">
+                            <input type="text" class="form__input form__input--search" name="search" id="article-search" placeholder="Поиск статьи">
                             <button class="button-search" type="button">
                                 <img src="assets/images/search.svg" alt="Поиск">
                             </button>
@@ -127,44 +127,44 @@
                     </div>
             
                     <div class="add-post">
-                        <form class="add-post__form" action="/" method="post" id="add-post_form3">
+                        <form class="add-post__form" action="/" method="post" id="add-post_form">
                             <div class="add-post__inputs">
-                                <input type="text" class="add-post__input" name="article-header" placeholder="Заголовок записи" id="add-post-input3">
-                                <textarea class="add-post__input add-post__textarea" name="post" id="add-post-textarea3" placeholder="Новая запись" data-resize></textarea>
+                                <input type="text" class="add-post__input" name="article-header" placeholder="Заголовок записи" id="add-post-input">
+                                <textarea class="add-post__input add-post__textarea" name="post" id="add-post-textarea" placeholder="Новая запись" data-resize></textarea>
                                 <div class="add-post__type hide">
                                     <div class="add-post__radio">
-                                        <input type="radio" id="experience3" name="add-post_type" value="experience">
-                                        <label for="experience3">Личный опыт</label>
+                                        <input type="radio" id="experience" name="add-post_type" value="experience">
+                                        <label for="experience">Личный опыт</label>
                                     </div>
             
                                     <div class="add-post__radio">
-                                        <input type="radio" id="guide3" name="add-post_type" value="guide">
-                                        <label for="guide3">Путеводитель</label>
+                                        <input type="radio" id="guide" name="add-post_type" value="guide">
+                                        <label for="guide">Путеводитель</label>
                                     </div>
             
                                     <div class="add-post__radio">
-                                        <input type="radio" id="manual3" name="add-post_type" value="manual" checked>
-                                        <label for="manual3">Методичка</label>
+                                        <input type="radio" id="manual" name="add-post_type" value="manual" checked>
+                                        <label for="manual">Методичка</label>
                                     </div>
             
                                     <div class="add-post__radio">
-                                        <input type="radio" id="recommended3" name="add-post_type" value="recommended">
-                                        <label for="recommended3">Рекомендуемое</label>
+                                        <input type="radio" id="recommended" name="add-post_type" value="recommended">
+                                        <label for="recommended">Рекомендуемое</label>
                                     </div>
             
                                 </div> <!-- ./add-post__type -->
                             </div> <!-- ./add-post__inputs -->
                             <div class="add-post__group">
-                                <label class="add-post__file" for="add-post-file3">
-                                    <input type="file" id="add-post-file3">
+                                <label class="add-post__file" for="add-post-file">
+                                    <input type="file" id="add-post-file">
                                 </label>
                                 <button class="button-send" type="submit">Отправить</button>
                             </div>
                         </form>
                     </div>
             
-                    <div class="article__inner articlePages">
-                        <div class="article__page show page1">
+                    <div class="article__inner" id="articlePages">
+                        <div class="article__page show" id="page1">
             
                            <div class="article__item article__item--text">
                                 <div class="article__content">
@@ -178,7 +178,7 @@
                                     </div>
                                     <div class="article__footer">
                                         <ul class="article__data">
-                                            <li>Методичка</li>
+                                            <li><a class="article__link" href="manual.html">Методичка</a></li>
                                             <li>
                                                 <svg class="article__icon" id="date-acticle" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M17.1875 14.0625H10.9375V7.8125H14.0625V10.9375H17.1875V14.0625ZM23.4375 1.5625V23.4375H1.5625V1.5625H23.4375ZM20.3125 4.6875H4.6875V20.3125H20.3125V4.6875Z"/>
@@ -209,7 +209,7 @@
                                     </div>
                                     <div class="article__footer">
                                         <ul class="article__data">
-                                            <li>Методичка</li>
+                                            <li><a class="article__link" href="manual.html">Методичка</a></li>
                                             <li>
                                                 <svg class="article__icon" id="date-acticle" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M17.1875 14.0625H10.9375V7.8125H14.0625V10.9375H17.1875V14.0625ZM23.4375 1.5625V23.4375H1.5625V1.5625H23.4375ZM20.3125 4.6875H4.6875V20.3125H20.3125V4.6875Z"/>
@@ -244,7 +244,7 @@
                                     </a>
                                     <div class="article__footer">
                                         <ul class="article__data">
-                                            <li>Методичка</li>
+                                            <li><a class="article__link" href="manual.html">Методичка</a></li>
                                             <li>
                                                 <svg class="article__icon" id="date-acticle" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M17.1875 14.0625H10.9375V7.8125H14.0625V10.9375H17.1875V14.0625ZM23.4375 1.5625V23.4375H1.5625V1.5625H23.4375ZM20.3125 4.6875H4.6875V20.3125H20.3125V4.6875Z"/>
@@ -279,7 +279,7 @@
                                     </div>
                                     <div class="article__footer">
                                         <ul class="article__data">
-                                            <li>Методичка</li>
+                                            <li><a class="article__link" href="manual.html">Методичка</a></li>
                                             <li>
                                                 <svg class="article__icon" id="date-acticle" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M17.1875 14.0625H10.9375V7.8125H14.0625V10.9375H17.1875V14.0625ZM23.4375 1.5625V23.4375H1.5625V1.5625H23.4375ZM20.3125 4.6875H4.6875V20.3125H20.3125V4.6875Z"/>
@@ -296,19 +296,24 @@
                         <!-- pagination -->
                         <ul class="pagination">
                             <li class="pagination__item">
-                                <a class="pagination__link" href="#" data-page=".previousPage">&lt;</a>
+                                <a class="pagination__link" href="#" data-page="#previousPage">&lt;</a>
                             </li>
                             <li class="pagination__item">
-                                <a class="pagination__link active" href="#" data-page=".page1">1</a>
+                                <a class="pagination__link active" href="#" data-page="#page1">1</a>
                             </li>
                             <li class="pagination__item">
-                                <a class="pagination__link" href="#" data-page=".nextPage">&gt;</a>
+                                <a class="pagination__link" href="#" data-page="#nextPage">&gt;</a>
                             </li>
                         </ul> <!-- ./pagination -->
             
                     </div>  <!-- ./article__inner -->
                 </div>  <!-- ./container -->
             </section> <!-- ./article -->
+            
+            
+            <!-- Javascript -->
+            <script defer src="assets/js/articlePages.min.js"></script>
+            <script defer src="assets/js/post.min.js"></script>
             
         </main>
 
