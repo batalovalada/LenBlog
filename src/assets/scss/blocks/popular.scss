@@ -171,7 +171,10 @@
 @include media($tablet-br-2) {
 
     .popular__line {
-        width: 100%;
+        &.show {
+            width: 100%;
+
+        }
     }
 
     .popular__suptitle {

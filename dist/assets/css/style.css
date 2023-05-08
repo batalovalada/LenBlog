@@ -1243,7 +1243,7 @@ p {
 }
 
 @media (max-width: 767px) {
-    .popular__line {
+    .popular__line.show {
         width: 100%;
     }
 
