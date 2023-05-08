@@ -4,12 +4,10 @@ const addPostForm = document.getElementById('add-post_form');
 const textareaHeight = document.getElementById('add-post-textarea').offsetHeight;
 
 //create post pattern
-const postPattern = createElement('article', 'article__item article__item--text');
+const postPattern = createElement('article', 'article__item');
+
 const postContent = createElement('div', 'article__content');
-const postTitleLink = createElement('a', 'article__title-link');
-postTitleLink.href = 'article.html';
 const postTitle = createElement('h3', 'article__title');
-const postText = createElement('div', 'article__text');
 const postFooter = `<div class="article__footer">
                             <ul class="article__data">
                                 <li><a class="article__link" href="#"></a></li>
@@ -21,10 +19,18 @@ const postFooter = `<div class="article__footer">
                                 </li>
                             </ul>
                         </div>`;
-postTitleLink.append(postTitle);
-postContent.append(postTitleLink, postText);
+
+postContent.append(postTitle);
 postContent.insertAdjacentHTML('beforeend', postFooter);
 postPattern.append(postContent);
+
+//.article__text pattern
+const postText = createElement('div', 'article__text');
+
+//.article__header pattern
+const postHeader = createElement('div', '.article__header');
+const postImg = `<img class="article__img" src="" alt="">`;
+postHeader.insertAdjacentHTML('beforeend', postImg);
 
 //add post event
 addPostForm.addEventListener('submit', newPostHandler)
@@ -33,9 +39,18 @@ function  newPostHandler() {
     event.preventDefault();
     const newArticle = postPattern.cloneNode(true);
 
+    //inputs
     const articleTitle = this.querySelector('#add-post-input');
     const articleText = this.querySelector('#add-post-textarea');
+    let articleFoto = this.querySelector('#add-post-file').files[0];
     let articleType = this.querySelector('input[name="add-post_type"]:checked').value;
+
+    //check post type
+    if (articleText.value == '' && articleFoto != undefined) {
+        newArticle.classList.add('article__item--image');
+    } else if (articleText.value != '' && articleFoto == undefined) {
+        newArticle.classList.add('article__item--text');
+    }
 
     //fill the post with content
     const articleDate = newArticle.querySelector('.article__date');
@@ -45,7 +60,29 @@ function  newPostHandler() {
     articleDate.setAttribute('dateTime', `${postDate[0]}-${postDate[1]}-${postDate[2]}T${postDate[3]}:${postDate[4]}`);
 
     newArticle.querySelector('.article__title').innerText = articleTitle.value;
-    newArticle.querySelector('.article__text').innerText = articleText.value;
+
+    //.article__item--image hasn't .article__text
+    //.article__item--text hasn't .article__header
+    if (!newArticle.classList.contains('article__item--image')) {
+        newArticle.querySelector('.article__title').after(postText.cloneNode(true));
+        newArticle.querySelector('.article__text').innerText = articleText.value;
+    }
+
+    if (!newArticle.classList.contains('article__item--text')) {
+        newArticle.prepend(postHeader.cloneNode(true));
+        const reader = new FileReader();
+        reader.onloadend = function () {
+            newArticle.querySelector('.article__img').src = reader.result;
+        }
+        if (articleFoto) {
+            reader.readAsDataURL(articleFoto);
+        } else {
+            newArticle.querySelector('.article__img').src = '';
+        }
+        newArticle.querySelector('.article__img').alt = articleTitle.value;
+    }
+
+    //article category
     newArticle.querySelector('.article__link').href = articleType + '.html';
     switch(true) {
         case articleType == 'experience':
@@ -61,15 +98,15 @@ function  newPostHandler() {
             articleType = 'Рекомендуемое'
             break;
     }
-
     newArticle.querySelector('.article__link').innerText = articleType;
 
     //put post on the first page
-    firstPage.prepend(newArticle)
+    firstPage.prepend(newArticle);
 
     //clear form
     articleTitle.value = '';
     articleText.value = '';
+    this.querySelector('#add-post-file').value = '';
     document.getElementById('add-post-textarea').style.height = textareaHeight + 'px';
 }
 
