@@ -2,10 +2,11 @@
 const firstPage = document.getElementById('page1');
 const addPostForm = document.getElementById('add-post_form');
 const textareaHeight = document.getElementById('add-post-textarea').offsetHeight;
+const addPostFile = document.getElementById('add-post-file');
+const deleteFileBtn = document.getElementById('deleteFile');
 
 //create post pattern
 const postPattern = createElement('article', 'article__item');
-
 const postContent = createElement('div', 'article__content');
 const postTitle = createElement('h3', 'article__title');
 const postFooter = `<div class="article__footer">
@@ -28,14 +29,49 @@ postPattern.append(postContent);
 const postText = createElement('div', 'article__text');
 
 //.article__header pattern
-const postHeader = createElement('div', '.article__header');
+const postHeader = createElement('div', 'article__header');
 const postImg = `<img class="article__img" src="" alt="">`;
 postHeader.insertAdjacentHTML('beforeend', postImg);
 
-//add post event
-addPostForm.addEventListener('submit', newPostHandler)
 
-function  newPostHandler() {
+//===========================show file from input==================
+addPostFile.addEventListener('input', postFileHandler);
+deleteFileBtn.addEventListener('click', event => {
+    event.preventDefault();
+    fileClear();
+});
+//=============================add post event======================
+addPostForm.addEventListener('submit', newPostHandler);
+
+//========================handlers=================================
+function postFileHandler() {
+    const formPreview = document.querySelector('.add-post__preview');
+    const fileModalImg = document.querySelector('.modal__file-img');
+    const formPreviewImg = formPreview.querySelector('.add-post__preview-img');
+    const formPreviewLink = formPreview.querySelector('.add-post__preview-link');
+
+    formPreview.classList.remove('hide');
+    const reader = new FileReader();
+    reader.onloadend = function () {
+        formPreviewImg.src = reader.result;
+        fileModalImg.src = reader.result;
+    }
+    if (this.files[0]) {
+        reader.readAsDataURL(this.files[0]);
+    } else {
+        formPreviewImg.src = '';
+        fileModalImg.src = '';
+    }
+
+    formPreviewLink.innerText = this.value;
+    formPreviewLink.title = this.value;
+    formPreviewImg.alt = this.value;
+    formPreviewImg.title = this.value;
+    fileModalImg.alt = this.value;
+
+}
+
+function  newPostHandler(event) {
     event.preventDefault();
     const newArticle = postPattern.cloneNode(true);
 
@@ -106,8 +142,22 @@ function  newPostHandler() {
     //clear form
     articleTitle.value = '';
     articleText.value = '';
-    this.querySelector('#add-post-file').value = '';
+    fileClear();
     document.getElementById('add-post-textarea').style.height = textareaHeight + 'px';
+}
+
+//================file input clear===============================
+function fileClear() {
+    const formPreview = document.querySelector('.add-post__preview');
+    const formPreviewImg = document.querySelector('.add-post__preview-img');
+    const formPreviewLink = document.querySelector('.add-post__preview-link');
+    document.querySelector('#add-post-file').value = '';
+    formPreviewImg.src = '';
+    formPreviewImg.alt = '';
+    formPreviewImg.title = '';
+    formPreviewLink.innerText = '';
+    formPreviewLink.title = '';
+    formPreview.classList.add('hide');
 }
 
 

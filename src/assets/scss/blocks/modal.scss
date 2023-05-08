@@ -31,7 +31,9 @@
     transform: translateY(-5rem);
     transition: transform .2s ease-in-out, opacity .2s ease-in-out;
 
-
+    &--file {
+        padding: 0;
+    }
 }
 
 .modal__title {
@@ -72,12 +74,27 @@
 
 }
 
+
+.modal__file-img {
+    width: 40rem;
+}
+
+
 /*=================== Media Modal ===================*/
 @include media($mobile-br) {
     .modal__inner {
         padding: 5rem 1.5rem;
         width: 100%;
+
+        &--file {
+            padding: 0;
+        }
     }
+
+    .modal__file-img {
+        width: 100%;
+    }
+
 }
 
 

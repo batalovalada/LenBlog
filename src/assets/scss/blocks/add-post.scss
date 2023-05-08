@@ -75,7 +75,71 @@
         width: 10.75rem;
         padding-left: 1.75rem;
         display: flex;
-        justify-content: flex-end;
+        flex-direction: column;
+
+        &-inner {
+            display: flex;
+        }
+    }
+
+    &__preview {
+        margin-bottom: 1rem;
+        &-img {
+            width: 6rem;
+            display: block;
+            margin-bottom: .5rem;
+        }
+
+        &-text {
+            display: flex;
+            align-items: center;
+            width: 9rem;
+        }
+
+        &-link {
+            font-family: $font-text;
+            color: $black;
+            line-height: 1.1;
+            font-size: 1rem;
+            font-weight: 400;
+
+
+
+            border: 1px solid $black;
+            padding: .25rem;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+
+            margin-right: .5rem;
+
+        }
+
+        &-btn {
+            font-size: 0;
+            color: transparent;
+            width: 2rem;
+            height: 2rem;
+            padding: 0;
+            flex-shrink: 0;
+            display: block;
+            opacity: .8;
+
+            background: transparent url(../images/add-post/delete.svg) center no-repeat;
+            border: none;
+            cursor: pointer;
+            transition: opacity .2s ease-in-out;
+
+            &:hover {
+                opacity: 1;
+            }
+
+
+        }
+
+        &.hide {
+            display: none;
+        }
     }
 
     &__file {

@@ -73,11 +73,22 @@ title: Путеводитель
 
                     </div> <!-- ./add-post__type -->
                 </div> <!-- ./add-post__inputs -->
-                <div class="add-post__group">
-                    <label class="add-post__file" for="add-post-file">
-                        <input type="file" id="add-post-file">
-                    </label>
-                    <button class="button-send" type="submit">Отправить</button>
+                <div class="add-post__group" id='addPostGroup'>
+                    <div class="add-post__preview hide">
+                        <a href="#" data-modal="file-modal">
+                            <img class="add-post__preview-img" title="" src="" alt="">
+                        </a>
+                        <div class="add-post__preview-text">
+                            <a class="add-post__preview-link" href="#" data-modal="file-modal" title=""></a>
+                            <button class="add-post__preview-btn" id="deleteFile" type="submit" title="Удалить файл">delete file</button>
+                        </div>
+                    </div>
+                    <div class="add-post__group-inner">
+                        <label class="add-post__file" for="add-post-file">
+                            <input type="file" id="add-post-file">
+                        </label>
+                        <button class="button-send" type="submit">Отправить</button>
+                    </div>
                 </div>
             </form>
         </div>

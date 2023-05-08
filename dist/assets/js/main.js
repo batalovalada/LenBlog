@@ -33,6 +33,7 @@ const modal = document.querySelectorAll('.modal');
 //open modal
 modalBtn.forEach(item => {
     item.addEventListener('click', event => {
+        event.preventDefault();
         let $this = event.currentTarget;
         let modalId = $this.getAttribute('data-modal');
         let modal = document.getElementById(modalId);
